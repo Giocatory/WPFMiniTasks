@@ -16,6 +16,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Uno.UI" Version="4.0.13" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="calendar.png" />
   </ItemGroup>
 

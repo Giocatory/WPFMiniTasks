@@ -11,10 +11,5 @@ namespace experiment
         {
             InitializeComponent();
         }
-
-        private void button_Click(object sender, RoutedEventArgs e)
-        {
-            dateText.Text = calendar.SelectedDate.ToString().Split(" ")[0];
-        }
     }
 }
