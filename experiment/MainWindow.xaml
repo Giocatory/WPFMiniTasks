@@ -5,9 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:experiment"
         mc:Ignorable="d"
-        Title="Calendar" Height="300" Width="600" Background="#FF556C9A" Icon="/calendar.png" WindowStartupLocation="CenterScreen" MouseMove="Window_MouseMove">
+        Title="Calendar" Height="300" Width="600" Background="#FF556C9A" Icon="/calendar.png" WindowStartupLocation="CenterScreen">
     <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="270,12,0,0" VerticalAlignment="Top" Height="22" Width="95" Foreground="Black" FontFamily="Consolas" FontWeight="Heavy" Click="button_Click">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button Grid.Row="0" Grid.Column="0" Content="Check Date" HorizontalAlignment="Left" Margin="200, 7, 0, 12" VerticalAlignment="Top" Height="22" Width="95" Foreground="Black" FontFamily="Consolas" FontWeight="Heavy" Click="button_Click">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="Black"/>
@@ -17,7 +25,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Calendar HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" FontFamily="Consolas" FontWeight="DemiBold" TabIndex="2147483646">
+        <Calendar Grid.Row="0" Grid.Column="0" x:Name="calendar" HorizontalAlignment="Left" Margin="10,5,0,5" VerticalAlignment="Top" FontFamily="Consolas" FontWeight="DemiBold" TabIndex="2147483646">
             <Calendar.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFE4EAF0"/>
@@ -27,6 +35,7 @@
                 </LinearGradientBrush>
             </Calendar.Background>
         </Calendar>
+        <TextBlock x:Name="dateText" HorizontalAlignment="Left" Margin="200,40,0,0" TextWrapping="Wrap" VerticalAlignment="Top"  Height="22" Width="95"/>
 
     </Grid>
 </Window>

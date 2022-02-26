@@ -14,12 +14,7 @@ namespace experiment
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("You click to button!");
-        }
-
-        private void Window_MouseMove(object sender, System.Windows.Input.MouseEventArgs e)
-        {
-            this.Title = e.GetPosition(this).ToString();
+            dateText.Text = calendar.SelectedDate.ToString().Split(" ")[0];
         }
     }
 }
