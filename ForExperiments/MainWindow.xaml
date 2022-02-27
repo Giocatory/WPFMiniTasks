@@ -13,7 +13,7 @@
     <Grid>
         <!-- Comment -->
         <TextBox FontSize="25" FontWeight="Bold" Foreground="BlueViolet" Text="&lt; Hello Mikhail! &gt;" FontFamily="Times New Roman" Background="Aqua"
-               Margin="10,10,560,270" Width="auto" Height="auto" BorderBrush="Black"/>
+               Margin="10,10,560,270" Width="auto" Height="auto" BorderBrush="Black" Padding="5"/>
         <ComboBox Margin="260,10,360,270" HorizontalAlignment="Center" VerticalAlignment="Center" BorderThickness="2" BorderBrush="DarkGoldenrod" ToolTip="Selected">
             <ComboBoxItem IsSelected="True">
                 <Label Content="One"></Label>
@@ -28,6 +28,12 @@
                 <Label Content="Four"></Label>
             </ComboBoxItem>
         </ComboBox>
+        
+            <Button Margin="10,87,620,180" BorderBrush="Red" BorderThickness="2" Background="Blue">
+                <Border CornerRadius="25" BorderThickness="5" BorderBrush="Red">
+                <Label Content="Knopka" Foreground="Yellow" Width="auto" Height="auto" FontSize="9"/>
+                </Border>
+            </Button>
         
     </Grid>
 </Window>
