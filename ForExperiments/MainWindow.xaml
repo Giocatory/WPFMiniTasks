@@ -8,12 +8,13 @@
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
         xml:space="preserve"
         mc:Ignorable="d"
+        
         Title="For experiments" Height="350" Width="800">
     <Grid>
         <!-- Comment -->
         <TextBox FontSize="25" FontWeight="Bold" Foreground="BlueViolet" Text="&lt; Hello Mikhail! &gt;" FontFamily="Times New Roman" Background="Aqua"
-               Margin="10,10,560,270" Width="auto" Height="auto"/>
-        <ComboBox Margin="260,10,360,270" HorizontalAlignment="Center" VerticalAlignment="Center">
+               Margin="10,10,560,270" Width="auto" Height="auto" BorderBrush="Black"/>
+        <ComboBox Margin="260,10,360,270" HorizontalAlignment="Center" VerticalAlignment="Center" OpacityMask="Black">
             <ComboBoxItem IsSelected="True">
                 <Label Content="One"></Label>
             </ComboBoxItem>
