@@ -9,31 +9,35 @@
         xml:space="preserve"
         mc:Ignorable="d"
         
-        Title="For experiments" Height="350" Width="800">
+        Title="For experiments" Height="250" Width="300" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
     <Grid>
-        <!-- Comment -->
-        <TextBox FontSize="25" FontWeight="Bold" Foreground="BlueViolet" Text="&lt; Hello Mikhail! &gt;" FontFamily="Times New Roman" Background="Aqua"
-               Margin="10,10,560,270" Width="auto" Height="auto" BorderBrush="Black" Padding="5"/>
-        <ComboBox Margin="260,10,360,270" HorizontalAlignment="Center" VerticalAlignment="Center" BorderThickness="2" BorderBrush="DarkGoldenrod" ToolTip="Selected">
-            <ComboBoxItem IsSelected="True">
-                <Label Content="One"></Label>
-            </ComboBoxItem>
-            <ComboBoxItem>
-                <Label Content="Two"></Label>
-            </ComboBoxItem>
-            <ComboBoxItem>
-                <Label Content="Three"></Label>
-            </ComboBoxItem>
-            <ComboBoxItem>
-                <Label Content="Four"></Label>
-            </ComboBoxItem>
-        </ComboBox>
-        
-            <Button Margin="10,87,620,180" BorderBrush="Red" BorderThickness="2" Background="Blue">
-                <Border CornerRadius="25" BorderThickness="5" BorderBrush="Red">
-                <Label Content="Knopka" Foreground="Yellow" Width="auto" Height="auto" FontSize="9"/>
-                </Border>
-            </Button>
-        
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#FFB7B7B7"/>
+                <GradientStop Color="#FF33597B" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="All mini desktop Apps" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Center" Width="300" TextAlignment="Center"
+                   FontFamily="Arial" FontWeight="Bold" FontSize="25" Foreground="#FF1B1838"/>
+        <StackPanel Margin="5" Grid.ColumnSpan="3" Grid.Row="1">
+            <TextBox Margin="5" Width="200" Height="20" Text="Login"/>
+            <TextBox Margin="5" Width="200" Height="20" Text="Password"/>
+        </StackPanel>
+        <StackPanel Grid.ColumnSpan="3" Grid.Row="2" Orientation="Horizontal" Margin="5" Width="150" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Button Content="Войти" Margin="5" Height="40" Padding="10"/> 
+            <Button Content="Регистрация" Margin="5" Height="40" Padding="10"/> 
+        </StackPanel>
+        <TextBlock Text="Пароль забыт?" Grid.ColumnSpan="3" Grid.Row="4" Width="150" TextAlignment="Center" Foreground="Blue" Cursor="Hand"/>
     </Grid>
 </Window>
