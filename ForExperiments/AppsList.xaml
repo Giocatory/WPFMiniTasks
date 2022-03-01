@@ -8,5 +8,6 @@
       Title="AppsList" Background="AntiqueWhite" WindowStartupLocation="CenterScreen">
 
     <Grid>
+        
     </Grid>
 </Window>
