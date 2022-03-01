@@ -1,18 +1,4 @@
-﻿/*using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;*/
-using System.Windows;
+﻿using System.Windows;
 
 namespace ForExperiments
 {
@@ -28,14 +14,29 @@ namespace ForExperiments
 
         private void signIn_Click(object sender, RoutedEventArgs e)
         {
-            if (login.Text == "" || login.Text.ToLower() == "login")
+
+            if (login.Text == "" || password.Password == "")
             {
                 MessageBox.Show("Не корректный ввод логина/пароля");
+                return;
             }
-            else if (password.Text == "" || password.Text.ToLower() == "password")
+            if (login.Text.ToLower() == "admin" && password.Password.ToLower() == "admin")
             {
-                MessageBox.Show("Не корректный ввод логина/пароля");
+                AppsList taskWindow = new AppsList();
+                taskWindow.ViewModel = $"User: {login.Text}\nPass: {password.Password}\nДобро пожаловать! Выберите что-нибудь из списка приложений!";
+                taskWindow.Show();
+                taskWindow.ShowViewModel();
             }
+            else
+            {
+                MessageBox.Show("База данных еще не подключена!");
+            }
+        }
+
+        private void registration_Click(object sender, RoutedEventArgs e)
+        {
+            RegWindow regWindow = new RegWindow();
+            regWindow.Show();
         }
     }
 }
