@@ -14,6 +14,8 @@ namespace ForExperiments
 
         private void signIn_Click(object sender, RoutedEventArgs e)
         {
+            AppsList taskWindow = new();
+
             if (login.Text == "" || password.Password == "")
             {
                 MessageBox.Show("Не корректный ввод логина/пароля");
@@ -21,21 +23,23 @@ namespace ForExperiments
             }
             if (login.Text.ToLower() == "admin" && password.Password.ToLower() == "admin")
             {
-                AppsList taskWindow = new AppsList();
-                taskWindow.ViewModel = $"User: {login.Text}\nPass: {password.Password}\nДобро пожаловать! Выберите что-нибудь из списка приложений!";
+                taskWindow.ViewModel = $"Добро пожаловать, {login.Text}!\nВыберите что-нибудь из списка приложений!";
                 taskWindow.Show();
+                taskWindow.Owner = this;
                 taskWindow.ShowViewModel();
             }
             else
             {
                 MessageBox.Show("База данных еще не подключена!");
             }
+
         }
 
         private void registration_Click(object sender, RoutedEventArgs e)
         {
-            RegWindow regWindow = new RegWindow();
+            RegWindow regWindow = new();
             regWindow.Show();
+
         }
     }
 }
