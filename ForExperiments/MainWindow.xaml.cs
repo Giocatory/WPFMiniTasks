@@ -14,7 +14,6 @@ namespace ForExperiments
 
         private void signIn_Click(object sender, RoutedEventArgs e)
         {
-
             if (login.Text == "" || password.Password == "")
             {
                 MessageBox.Show("Не корректный ввод логина/пароля");

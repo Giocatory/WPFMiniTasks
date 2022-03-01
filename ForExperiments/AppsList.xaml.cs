@@ -8,6 +8,7 @@ namespace ForExperiments
     public partial class AppsList : Window
     {
         public string ViewModel { get; set; }
+
         public AppsList()
         {
             InitializeComponent();
