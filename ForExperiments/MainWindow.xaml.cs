@@ -25,5 +25,17 @@ namespace ForExperiments
         {
             InitializeComponent();
         }
+
+        private void signIn_Click(object sender, RoutedEventArgs e)
+        {
+            if (login.Text == "" || login.Text.ToLower() == "login")
+            {
+                MessageBox.Show("Не корректный ввод логина/пароля");
+            }
+            else if (password.Text == "" || password.Text.ToLower() == "password")
+            {
+                MessageBox.Show("Не корректный ввод логина/пароля");
+            }
+        }
     }
 }
