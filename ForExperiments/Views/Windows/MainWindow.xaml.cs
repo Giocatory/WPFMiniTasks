@@ -1,4 +1,8 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 
 namespace ForExperiments
 {
@@ -10,6 +14,7 @@ namespace ForExperiments
         public MainWindow()
         {
             InitializeComponent();
+            this.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), @$"{Environment.CurrentDirectory}\welcome.jpg")));
         }
 
         private void signIn_Click(object sender, RoutedEventArgs e)
@@ -39,7 +44,29 @@ namespace ForExperiments
         {
             RegWindow regWindow = new();
             regWindow.Show();
+            regWindow.Owner = this;
 
+        }
+
+        private void signIn_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            signIn.Background = Brushes.Yellow;
+            signIn.Foreground = Brushes.Blue;
+        }
+        private void signIn_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            signIn.Background = Brushes.Blue;
+            signIn.Foreground = Brushes.Yellow;
+        }
+        private void reg_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            registration.Background = Brushes.Yellow;
+            registration.Foreground = Brushes.Blue;
+        }
+        private void reg_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            registration.Background = Brushes.Blue;
+            registration.Foreground = Brushes.Yellow;
         }
     }
 }

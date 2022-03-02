@@ -1,4 +1,8 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 
 namespace ForExperiments
 {
@@ -10,6 +14,8 @@ namespace ForExperiments
         public RegWindow()
         {
             InitializeComponent();
+            this.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), @$"{Environment.CurrentDirectory}\mainBg.jpg")));
         }
+
     }
 }
