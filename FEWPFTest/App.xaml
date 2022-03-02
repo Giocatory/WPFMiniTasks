@@ -1,7 +1,9 @@
-﻿<Application x:Class="ForExperiments.App"
+﻿<Application x:Class="FEWPFTest.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             StartupUri="Views/Windows/MainWindow.xaml">
+             xmlns:local="clr-namespace:FEWPFTest"
+             StartupUri="MainWindow.xaml">
     <Application.Resources>
+         
     </Application.Resources>
 </Application>
