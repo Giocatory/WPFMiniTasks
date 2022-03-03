@@ -37,7 +37,6 @@ namespace ForExperiments
             {
                 MessageBox.Show("База данных еще не подключена!");
             }
-
         }
 
         private void registration_Click(object sender, RoutedEventArgs e)
@@ -45,7 +44,6 @@ namespace ForExperiments
             RegWindow regWindow = new();
             regWindow.Show();
             regWindow.Owner = this;
-
         }
 
         private void signIn_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
@@ -53,16 +51,19 @@ namespace ForExperiments
             signIn.Background = Brushes.Yellow;
             signIn.Foreground = Brushes.Blue;
         }
+
         private void signIn_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
         {
             signIn.Background = Brushes.Blue;
             signIn.Foreground = Brushes.Yellow;
         }
+
         private void reg_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
             registration.Background = Brushes.Yellow;
             registration.Foreground = Brushes.Blue;
         }
+
         private void reg_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
         {
             registration.Background = Brushes.Blue;

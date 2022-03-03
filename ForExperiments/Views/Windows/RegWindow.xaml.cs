@@ -16,6 +16,5 @@ namespace ForExperiments
             InitializeComponent();
             this.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), @$"{Environment.CurrentDirectory}\mainBg.jpg")));
         }
-
     }
 }

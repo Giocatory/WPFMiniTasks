@@ -22,7 +22,7 @@ namespace ForExperiments.ViewModels.Base
         }
 
         // Деструктор
-        /*  
+        /*
           ~ViewModel()
           {
               Dispose(false);
@@ -41,7 +41,6 @@ namespace ForExperiments.ViewModels.Base
             if (!Disposing || _Disposed) return;
             _Disposed = true;
             // Освобождение управляемых ресурсов
-
         }
     }
 }
