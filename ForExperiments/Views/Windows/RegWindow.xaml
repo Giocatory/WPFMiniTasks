@@ -4,9 +4,51 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="RegWindow" Height="250" Width="300" WindowStartupLocation="CenterScreen">
+        xmlns:vm="clr-namespace:ForExperiments.ViewModels"
+        xml:space="default"
+        Title="{Binding Title}" Height="180" Width="550" WindowStartupLocation="CenterScreen">
+    <Window.DataContext>
+        <vm:RegWindowViewModel></vm:RegWindowViewModel>
+    </Window.DataContext>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top" BorderBrush="Gray" BorderThickness="1">
+            <MenuItem Header="Файл" BorderThickness="0,0,1,0" BorderBrush="DarkGray">
+                <MenuItem Header="Выход"/>
+            </MenuItem>
+            <MenuItem Header="Помощь" BorderThickness="0,0,1,0" BorderBrush="DarkGray">
+                <MenuItem Header="О программе"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <StatusBar DockPanel.Dock="Bottom">
+            
+        </StatusBar>
+        <TabControl>
+            <TabItem Header="Общее">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto"/>
+                    </Grid.ColumnDefinitions>
 
-    <Grid>
-        
-    </Grid>
+                    <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.ColumnSpan="3" Margin="5">
+                        <TextBlock Text="Логин: " Margin="5" FontSize="15" FontWeight="Bold" Grid.Column="0"></TextBlock>
+                        <TextBox MinWidth="100" MaxWidth="200" Width="200" Margin="14,5,5,5" BorderBrush="Black" Grid.Column="1"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0" Margin="5">
+                        <TextBlock Text="Пароль: " Margin="5" FontSize="15" FontWeight="Bold" Grid.Column="0"></TextBlock>
+                        <TextBox MinWidth="100" MaxWidth="200" Width="200" Margin="5" BorderBrush="Black" Grid.Column="1"></TextBox>
+                    </StackPanel>
+
+                    <TextBlock Text="{Binding Description}" Grid.Column="2" MaxWidth="250" MinWidth="100" Grid.RowSpan="2" Margin="5">
+                    </TextBlock>
+                </Grid>
+            </TabItem>
+            <TabItem Header="О Себе"></TabItem>
+        </TabControl>
+    </DockPanel>
 </Window>
