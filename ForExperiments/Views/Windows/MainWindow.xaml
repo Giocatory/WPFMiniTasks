@@ -17,14 +17,15 @@
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
             <ColumnDefinition />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <TextBlock Text="All mini desktop Apps" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Center" Width="300" TextAlignment="Center"
-                   FontFamily="Arial" FontWeight="Bold" FontSize="25" Foreground="#00b4fe" />
+        <TextBlock Text="{Binding Description}" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Center" Width="300" TextAlignment="Center"
+                   FontFamily="Arial" FontWeight="Bold" FontSize="20" Foreground="#00b4fe" />
         <StackPanel Margin="5" Grid.ColumnSpan="3" Grid.Row="1">
             <TextBox x:Name="login" BorderThickness="1" BorderBrush="#00b4fe" Margin="5" Width="200" Height="20" Text="Login" VerticalAlignment="Center" HorizontalAlignment="Center" AutoWordSelection="True" />
             <PasswordBox x:Name="password" BorderThickness="1" BorderBrush="#00b4fe" Margin="5" Width="200" Height="20" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" PasswordChar="*" Password="" />
@@ -65,7 +66,11 @@
 </Button.Style>
             </Button>
         </StackPanel>
-        <TextBlock x:Name="restorePass" TextDecorations="Underline" Text="Пароль забыт?" Grid.ColumnSpan="3" Grid.Row="4" Width="150" TextAlignment="Center" Foreground="#00b4fe" Cursor="Hand">
+        <TextBlock x:Name="restorePass" TextDecorations="Underline" Text="Пароль забыт?" Grid.ColumnSpan="3" Grid.Row="3" Width="150" TextAlignment="Center" Foreground="#00b4fe" Cursor="Hand">
         </TextBlock>
+        <StackPanel Grid.Row="4" Grid.ColumnSpan="3" Height="auto" Orientation="Horizontal">
+            <CheckBox x:Name="GuestLogin"></CheckBox>
+            <TextBlock Foreground="Yellow">Зайти как гость</TextBlock>
+        </StackPanel>
     </Grid>
 </Window>

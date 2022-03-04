@@ -7,6 +7,7 @@ namespace ForExperiments.ViewModels
         #region Заголовок Окна
 
         private string _Title = "Mini Apps";
+        private string _Description = "Mini Apps for your desktops";
 
         /*
          set {
@@ -20,7 +21,7 @@ namespace ForExperiments.ViewModels
 
         /// <summary> Заголовок Окна </summary>
         public string Title { get => _Title; set => Set(ref _Title, value); }
-
+        public string Description { get => _Description; set => Set(ref _Description, value); }
         #endregion Заголовок Окна
     }
 }

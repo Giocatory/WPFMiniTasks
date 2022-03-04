@@ -20,7 +20,14 @@ namespace ForExperiments
         private void signIn_Click(object sender, RoutedEventArgs e)
         {
             AppsList taskWindow = new();
-
+            if (GuestLogin.IsChecked == true)
+            {
+                taskWindow.ViewModel = $"Добро пожаловать, Guest!\nВыберите что-нибудь из списка приложений!";
+                taskWindow.Show();
+                taskWindow.Owner = this;
+                taskWindow.ShowViewModel();
+                return;
+            }
             if (login.Text == "" || password.Password == "")
             {
                 MessageBox.Show("Не корректный ввод логина/пароля");
@@ -46,6 +53,7 @@ namespace ForExperiments
             regWindow.Owner = this;
         }
 
+        // button hover animation
         private void signIn_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
             signIn.Background = Brushes.Yellow;
