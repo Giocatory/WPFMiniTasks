@@ -35,11 +35,13 @@ namespace ForExperiments
                 MessageBox.Show("Не корректный ввод"); return;
             }
             About.Focus();
+            RegProgress.Value = 100;
         }
 
         private void PrewTabIndex(object sender, RoutedEventArgs e)
         {
             LogPass.Focus();
+            RegProgress.Value = 50;
         }
 
         // hover in button

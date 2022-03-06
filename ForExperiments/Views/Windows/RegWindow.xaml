@@ -6,7 +6,7 @@
         xmlns:vm="clr-namespace:ForExperiments.ViewModels"
         mc:Ignorable="d"
         xml:space="default"
-        Title="{Binding Title}" Height="180" Width="550" WindowStartupLocation="CenterScreen" FontFamily="Arial">
+        Title="{Binding Title}" Height="180" Width="550" WindowStartupLocation="CenterScreen" FontFamily="Arial" ResizeMode="NoResize">
     <Window.DataContext>
         <vm:RegWindowViewModel></vm:RegWindowViewModel>
     </Window.DataContext>
@@ -20,8 +20,11 @@
             </MenuItem>
         </Menu>
         <StatusBar DockPanel.Dock="Bottom">
+            <StatusBarItem>
+                <ProgressBar x:Name="RegProgress" Width="544" Height="10" Value="50" HorizontalAlignment="Center" Margin="-5, 0, 0, -5" Background="Yellow"></ProgressBar>
+            </StatusBarItem>
         </StatusBar>
-        <TabControl Margin="-5" Background="#1b78d7">
+        <TabControl Margin="-5" Background="#1b78d7" Width="550">
             <TabItem x:Name="LogPass" Header="Общее" FontFamily="Arial" Height="0">
                 <Grid>
                     <Grid.RowDefinitions>
