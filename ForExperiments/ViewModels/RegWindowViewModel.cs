@@ -1,4 +1,5 @@
 ﻿using ForExperiments.ViewModels.Base;
+using System;
 
 namespace ForExperiments.ViewModels
 {
@@ -16,6 +17,11 @@ namespace ForExperiments.ViewModels
         public string Description { get => _Description; set => Set(ref _Description, value); }
 
         public string DescriptionFinall { get => _DescriptionFinall; set => Set(ref _DescriptionFinall, value); }
+
+        // Date time now
+        private string _TimeNow = $"Последний запуск программы - {DateTime.Now}";
+
+        public string TimeNow { get => _TimeNow; set => Set(ref _TimeNow, value); }
 
         #endregion Заголовок Окна
     }
