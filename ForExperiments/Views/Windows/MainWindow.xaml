@@ -16,7 +16,9 @@
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
-            <RowDefinition Height="10*" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="20*" />
+            
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
@@ -77,9 +79,12 @@
             </Button>
         </StackPanel>
         
-        <StackPanel Grid.Row="4" Grid.ColumnSpan="3" Height="auto" Orientation="Horizontal" VerticalAlignment="Bottom" Margin="15">
+        <StackPanel Grid.Row="3" Grid.ColumnSpan="3" Height="auto" Orientation="Horizontal" VerticalAlignment="Bottom" Margin="5">
             <CheckBox x:Name="GuestLogin"></CheckBox>
             <TextBlock Foreground="Yellow" Text=" Зайти, как гость"></TextBlock>
+            
         </StackPanel>
+        <TextBlock  Grid.Row="4" Grid.ColumnSpan="3" Text="{Binding TimeNow}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="White"
+                    FontStretch="UltraExpanded" FontFamily="Cosolas"/>
     </Grid>
 </Window>
