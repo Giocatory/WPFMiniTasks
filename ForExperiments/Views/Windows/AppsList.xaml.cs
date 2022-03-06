@@ -16,7 +16,7 @@ namespace ForExperiments
         public AppsList()
         {
             InitializeComponent();
-            this.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), @$"{Environment.CurrentDirectory}\cofee.jpg")));
+            this.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), @$"{Environment.CurrentDirectory}\img\cofee.jpg")));
         }
 
         public void ShowViewModel() => MessageBox.Show(ViewModel);

@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         xml:space="preserve"
         Title="{Binding Title}"
-        Height="300" Width="350" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="ThreeDBorderWindow" Background="#01366f">
+        Height="280" Width="350" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="ThreeDBorderWindow" Background="#01366f">
     <Window.DataContext>
         <vm:MainWindowViewModel />
     </Window.DataContext>
@@ -16,8 +16,7 @@
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="auto" />
+            <RowDefinition Height="10*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
@@ -77,10 +76,8 @@
 </Button.Style>
             </Button>
         </StackPanel>
-        <TextBlock x:Name="restorePass" TextDecorations="Underline" Text="Пароль забыт?" Grid.ColumnSpan="3" Grid.Row="3" Width="150" TextAlignment="Center"
-                   Foreground="#91feff" Cursor="Hand">
-        </TextBlock>
-        <StackPanel Grid.Row="4" Grid.ColumnSpan="3" Height="auto" Orientation="Horizontal">
+        
+        <StackPanel Grid.Row="4" Grid.ColumnSpan="3" Height="auto" Orientation="Horizontal" VerticalAlignment="Bottom" Margin="15">
             <CheckBox x:Name="GuestLogin"></CheckBox>
             <TextBlock Foreground="Yellow" Text=" Зайти, как гость"></TextBlock>
         </StackPanel>

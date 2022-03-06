@@ -14,7 +14,7 @@ namespace ForExperiments
         public MainWindow()
         {
             InitializeComponent();
-            this.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), @$"{Environment.CurrentDirectory}\welcome.jpg")));
+            this.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), @$"{Environment.CurrentDirectory}\img\welcome.jpg")));
         }
 
         private void signIn_Click(object sender, RoutedEventArgs e)
