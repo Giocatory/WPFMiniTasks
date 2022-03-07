@@ -17,8 +17,20 @@ namespace ForExperiments
         {
             InitializeComponent();
             this.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), @$"{Environment.CurrentDirectory}\img\cofee.jpg")));
+
+            // не прерывный показ текущего времени
+            var timer = new System.Windows.Threading.DispatcherTimer
+            {
+                Interval = new TimeSpan(0, 0, 1),
+                IsEnabled = true
+            };
+            timer.Tick += (o, t) => { TimeShow.Text = DateTime.Now.ToString(); };
+            timer.Start();
         }
 
-        public void ShowViewModel() => MessageBox.Show(ViewModel);
+        public void ShowViewModel()
+        {
+            MessageBox.Show(ViewModel);
+        }
     }
 }

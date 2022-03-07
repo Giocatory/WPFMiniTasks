@@ -13,7 +13,7 @@
     <DockPanel>
         <Menu DockPanel.Dock="Top" Background="#1b78d7" BorderThickness="0">
             <MenuItem Header="Файл" BorderThickness="0,0,1,0" BorderBrush="DarkGray" FontFamily="Arial" Foreground="Black">
-                <MenuItem Header="Выход" Click="CloseWindow" FontFamily="Arial" Foreground="Black" />
+                <MenuItem Header="Выход" Command="{Binding CloseApplicationCommand}" FontFamily="Arial" Foreground="Black" />
             </MenuItem>
             <MenuItem Header="Помощь" BorderThickness="0,0,1,0" BorderBrush="DarkGray" FontFamily="Arial" Foreground="Black">
                 <MenuItem Header="О программе" Click="aboutProgram" FontFamily="Arial" Foreground="Black"></MenuItem>

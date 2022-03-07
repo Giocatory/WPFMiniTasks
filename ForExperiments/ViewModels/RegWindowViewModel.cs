@@ -1,5 +1,8 @@
-﻿using ForExperiments.ViewModels.Base;
+﻿using ForExperiments.Infrastructure.Commands;
+using ForExperiments.ViewModels.Base;
 using System;
+using System.Windows;
+using System.Windows.Input;
 
 namespace ForExperiments.ViewModels
 {
@@ -24,5 +27,27 @@ namespace ForExperiments.ViewModels
         public string TimeNow { get => _TimeNow; set => Set(ref _TimeNow, value); }
 
         #endregion Заголовок Окна
+
+        #region Команды
+
+        public ICommand CloseApplicationCommand { get; }
+
+        private void OnCloseApplicationCommandExecuted(object p)
+        {
+            Application.Current.Shutdown();
+        }
+
+        private bool CanCloseApplicationCommandExecute(object p) => true;
+
+        #endregion Команды
+
+        public RegWindowViewModel()
+        {
+            #region Commands
+
+            CloseApplicationCommand = new LamdaCommand(OnCloseApplicationCommandExecuted, CanCloseApplicationCommandExecute);
+
+            #endregion Commands
+        }
     }
 }
