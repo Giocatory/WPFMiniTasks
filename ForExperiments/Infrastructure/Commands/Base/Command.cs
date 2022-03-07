@@ -16,4 +16,3 @@ namespace ForExperiments.Infrastructure.Commands.Base
         public abstract void Execute(object? parameter);
     }
 }
-
