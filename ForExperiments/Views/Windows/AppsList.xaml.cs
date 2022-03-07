@@ -32,5 +32,16 @@ namespace ForExperiments
         {
             MessageBox.Show(ViewModel);
         }
+
+        private void MenuItemEnv_Click(object sender, RoutedEventArgs e)
+        {
+            // работа с системными инструментами
+            MessageBox.Show(
+                $"System information:\nUser: {Environment.UserName}\nSystem process: {System.Diagnostics.Process.GetCurrentProcess()}\n" +
+                $"Current directory: {Environment.CurrentDirectory}\nCurrent Managed Thread ID: {Environment.CurrentManagedThreadId}\n" +
+                $"Logical Drives:\n{String.Join('\n', Environment.GetLogicalDrives())}\nhow much processors: {Environment.ProcessorCount}\n" +
+                $"System is 64bit?: {Environment.Is64BitOperatingSystem}\nOS version: {Environment.OSVersion}\nMachine name: {Environment.MachineName}\n" +
+                $".NET version: {Environment.Version}\nSystem directory: {Environment.SystemDirectory}");
+        }
     }
 }

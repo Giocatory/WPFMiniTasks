@@ -20,13 +20,13 @@
         <!-- 2 -->
         <Grid.RowDefinitions>
             <RowDefinition Height="auto"/>
-            <RowDefinition Height="auto"/>
             <RowDefinition/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <!-- 3 -->
         <Menu Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" Width="126.9">
             <MenuItem Header="Фаил" BorderThickness="1, 0, 1, 1" BorderBrush="Gray">
-                <MenuItem Header="Ваши системные характеристики"></MenuItem>
+                <MenuItem Header="Ваши системные характеристики" Click="MenuItemEnv_Click"></MenuItem>
                 <MenuItem Header="Выход" Command="{Binding CloseApplicationCommand}"></MenuItem>
             </MenuItem>
             <MenuItem Header="Вид" BorderThickness="0, 0, 1, 1" BorderBrush="Gray">
@@ -37,12 +37,15 @@
                 <MenuItem Header="О программе"></MenuItem>
             </MenuItem>
         </Menu>
+        
         <StackPanel Grid.Row="1" Grid.Column="0" MaxWidth="300" Width="300" MinWidth="200" Margin="5, 10, 0, 5" CanVerticallyScroll="True">
             <TextBlock Text="1) Калькулятор"></TextBlock>
             
         </StackPanel>
+        
         <TextBlock Text="kj;lb" Grid.Row="1" Grid.Column="1" Width="280" MaxWidth="280" MinWidth="150"  Margin="5, 10, 0, 5"
                    HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"></TextBlock>
-        <TextBlock x:Name="TimeShow" Text="Time" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="2" Grid.ColumnSpan="2"></TextBlock>
+        
+        <TextBlock x:Name="TimeShow" Text="время" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="2" Grid.ColumnSpan="2" FontWeight="Bold" FontSize="15"></TextBlock>
     </Grid>
 </Window>
