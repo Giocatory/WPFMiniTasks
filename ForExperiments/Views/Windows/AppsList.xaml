@@ -3,25 +3,23 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d"
         xmlns:vm="clr-namespace:ForExperiments.ViewModels"
-        xmlns:sys="clsr-namespace:System;assembly=mscorlib"
-        xmlns:local="slr-namespace:ForExperiments"
-      Title="{Binding Title}" WindowStartupLocation="CenterScreen" Width="600" Height="400" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
+        mc:Ignorable="d"
+        Title="{Binding Title}" WindowStartupLocation="CenterScreen" Width="600" Height="400" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
 
     <Window.DataContext>
-        <vm:AppListWindowViewModel/>
+        <vm:AppListWindowViewModel />
     </Window.DataContext>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="auto"/>
-            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="auto" />
         </Grid.ColumnDefinitions>
         <!-- 2 -->
         <Grid.RowDefinitions>
-            <RowDefinition Height="auto"/>
-            <RowDefinition/>
-            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto" />
+            <RowDefinition />
+            <RowDefinition Height="auto" />
         </Grid.RowDefinitions>
         <!-- 3 -->
         <Menu Grid.Row="0" Grid.ColumnSpan="2" HorizontalAlignment="Center" Width="126.9">
@@ -37,15 +35,14 @@
                 <MenuItem Header="О программе"></MenuItem>
             </MenuItem>
         </Menu>
-        
+
         <StackPanel Grid.Row="1" Grid.Column="0" MaxWidth="300" Width="300" MinWidth="200" Margin="5, 10, 0, 5" CanVerticallyScroll="True">
             <TextBlock Text="1) Калькулятор"></TextBlock>
-            
         </StackPanel>
-        
+
         <TextBlock Text="kj;lb" Grid.Row="1" Grid.Column="1" Width="280" MaxWidth="280" MinWidth="150"  Margin="5, 10, 0, 5"
                    HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center"></TextBlock>
-        
+
         <TextBlock x:Name="TimeShow" Text="время" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="2" Grid.ColumnSpan="2" FontWeight="Bold" FontSize="15"></TextBlock>
     </Grid>
 </Window>
