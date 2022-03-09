@@ -1,0 +1,145 @@
+﻿<Window x:Class="ForExperiments.RegWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:ForExperiments.ViewModels"
+        mc:Ignorable="d"
+        xml:space="default"
+        Title="{Binding Title}" Height="180" Width="550" WindowStartupLocation="CenterScreen" FontFamily="Arial" ResizeMode="NoResize">
+    <Window.DataContext>
+        <vm:RegWindowViewModel></vm:RegWindowViewModel>
+    </Window.DataContext>
+    <DockPanel>
+        <Menu DockPanel.Dock="Top" Background="#1b78d7" BorderThickness="0">
+            <MenuItem Header="Файл" BorderThickness="0,0,1,0" BorderBrush="DarkGray" FontFamily="Arial" Foreground="Black">
+                <MenuItem Header="Выход" Command="{Binding CloseApplicationCommand}" FontFamily="Arial" Foreground="Black" />
+            </MenuItem>
+            <MenuItem Header="Помощь" BorderThickness="0,0,1,0" BorderBrush="DarkGray" FontFamily="Arial" Foreground="Black">
+                <MenuItem Header="О программе" Click="aboutProgram" FontFamily="Arial" Foreground="Black"></MenuItem>
+            </MenuItem>
+        </Menu>
+        <StatusBar DockPanel.Dock="Bottom">
+            <StatusBarItem>
+                <ProgressBar x:Name="RegProgress" Width="544" Height="10" Value="50" HorizontalAlignment="Center" Margin="-5, 0, 0, -5" Background="Yellow"></ProgressBar>
+            </StatusBarItem>
+        </StatusBar>
+        <TabControl Margin="-5" Background="#1b78d7" Width="550">
+            <TabItem x:Name="LogPass" Header="Общее" FontFamily="Arial" Height="0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.ColumnSpan="3" Margin="5">
+                        <TextBlock Text="Логин: " Margin="5" FontSize="15" FontWeight="Bold" Grid.Column="0" FontFamily="Arial" Foreground="#001830"></TextBlock>
+                        <TextBox x:Name="Login" MinWidth="100" MaxWidth="200" Width="200" Margin="14,5,5,5" BorderBrush="Black" Grid.Column="1"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0" Margin="5">
+                        <TextBlock Text="Пароль: " Margin="5" FontSize="15" FontWeight="Bold" Grid.Column="0" FontFamily="Arial" Foreground="#001830"></TextBlock>
+                        <TextBox x:Name="Password" MinWidth="100" MaxWidth="200" Width="200" Margin="5" BorderBrush="Black" Grid.Column="1"></TextBox>
+                    </StackPanel>
+
+                    <TextBlock Text="{Binding Description}" Grid.Column="2" MaxWidth="250" MinWidth="100" Grid.RowSpan="2" Margin="5" FontFamily="Arial" Foreground="Gold">
+                    </TextBlock>
+
+                    <Button x:Name="ButtonNext" Content="Продолжить" Grid.Row="2" Grid.Column="0" Margin="5" Background="Blue" Foreground="Yellow" Click="NextTabIndex" MouseMove="HoverInButton" MouseLeave="HoverOutButton"
+                            FontWeight="Bold" FontFamily="Arial" Height="20">
+                        <Button.Style>
+                            <Style TargetType="Button">
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="Button">
+                                            <Border CornerRadius="5"
+                                                    Background="{TemplateBinding Background}">
+                                                <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                </Grid>
+            </TabItem>
+
+            <TabItem x:Name="About" Header="О Себе" FontFamily="Arial" Height="0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                        <RowDefinition Height="auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.ColumnSpan="2">
+                        <TextBlock Text="E-mail: " Margin="5" FontSize="15" FontWeight="Bold" Grid.Column="0" FontFamily="Arial"  Foreground="#001830"></TextBlock>
+                        <TextBox MinWidth="100" MaxWidth="200" Width="200" Margin="14,5,5,5" BorderBrush="Black" Grid.Column="1"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.ColumnSpan="2">
+                        <TextBlock Text="Telegramm: " Margin="5" FontSize="15" FontWeight="Bold" Grid.Column="0" FontFamily="Arial"  Foreground="#001830"></TextBlock>
+                        <TextBox MinWidth="100" MaxWidth="167" Width="167" Margin="14,5,5,5" BorderBrush="Black" Grid.Column="1"></TextBox>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.ColumnSpan="2">
+                        <TextBlock Text="Тел.: " Margin="5" FontSize="15" FontWeight="Bold" Grid.Column="0" FontFamily="Arial"  Foreground="#001830"></TextBlock>
+                        <TextBox MinWidth="100" MaxWidth="220" Width="215" Margin="14,5,5,5" BorderBrush="Black" Grid.Column="1"></TextBox>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.ColumnSpan="3" HorizontalAlignment="Center">
+                        <Button x:Name="ButtonPrew" Content="Вернуться" Margin="5" Background="Blue" Foreground="Yellow" MouseMove="HoverInPrewButton" MouseLeave="HoverOutPrewButton"
+        FontWeight="Bold" FontFamily="Arial" Click="PrewTabIndex" Width="100" Height="20">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border CornerRadius="5"
+                                Background="{TemplateBinding Background}">
+                                                    <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                        <Button x:Name="ButtonFinall" Content="Завершить" Margin="5" Background="Blue" Foreground="Yellow" MouseMove="HoverInFinButton" MouseLeave="HoverOutFinButton"
+        FontWeight="Bold" FontFamily="Arial" Width="100" Height="20">
+                            <Button.Style>
+                                <Style TargetType="Button">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="Button">
+                                                <Border CornerRadius="5"
+        Background="{TemplateBinding Background}">
+                                                    <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                        VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                                </Border>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </Button.Style>
+                        </Button>
+                    </StackPanel>
+
+                    <TextBlock Text="{Binding DescriptionFinall}" Grid.Column="2" Grid.RowSpan="4" Foreground="Gold" Margin="0,5,0,0"></TextBlock>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </DockPanel>
+</Window>

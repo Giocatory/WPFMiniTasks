@@ -3,29 +3,43 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xml:space="preserve"
+        xmlns:vm="clr-namespace:ForExperiments.ViewModels"
         mc:Ignorable="d"
-
-        Title="Mini Apps" Height="250" Width="300" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="ThreeDBorderWindow">
+        xml:space="preserve"
+        Title="{Binding Title}"
+        Height="280" Width="350" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="ThreeDBorderWindow" Background="#01366f">
+    <Window.DataContext>
+        <vm:MainWindowViewModel />
+    </Window.DataContext>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
             <RowDefinition Height="auto" />
+            <RowDefinition Height="20*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
             <ColumnDefinition />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <TextBlock Text="All mini desktop Apps" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Center" Width="300" TextAlignment="Center"
-                   FontFamily="Arial" FontWeight="Bold" FontSize="25" Foreground="#00b4fe" />
-        <StackPanel Margin="5" Grid.ColumnSpan="3" Grid.Row="1">
-            <TextBox x:Name="login" BorderThickness="1" BorderBrush="#00b4fe" Margin="5" Width="200" Height="20" Text="Login" VerticalAlignment="Center" HorizontalAlignment="Center" AutoWordSelection="True" />
+        <TextBlock Text="{Binding Description}" Grid.ColumnSpan="3" VerticalAlignment="Center" HorizontalAlignment="Center" Width="300" TextAlignment="Center"
+                   FontFamily="Arial" FontWeight="Bold" FontSize="20" Foreground="Yellow" Margin="0, 5, 0, -10">
+            <TextBlock.Effect>
+                <DropShadowEffect Color="Blue" />
+            </TextBlock.Effect>
+        </TextBlock>
+        <StackPanel Margin="5" Grid.ColumnSpan="3" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <Label Content="Логин" FontFamily="Arial" FontWeight="Bold" VerticalAlignment="Center"
+                   HorizontalAlignment="Center" Margin="-5" Foreground="White" FontSize="15" VerticalContentAlignment="Center">
+            </Label>
+            <TextBox x:Name="login" BorderThickness="1" BorderBrush="#00b4fe" Margin="5" Width="200" Height="20" VerticalAlignment="Center" HorizontalAlignment="Center" AutoWordSelection="True" />
+            <Label Content="Пароль" FontFamily="Arial" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="-5" Foreground="White" FontSize="15" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
+            </Label>
             <PasswordBox x:Name="password" BorderThickness="1" BorderBrush="#00b4fe" Margin="5" Width="200" Height="20" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" PasswordChar="*" Password="" />
         </StackPanel>
-        <StackPanel Grid.ColumnSpan="3" Grid.Row="2" Orientation="Horizontal" Margin="5" Width="150" VerticalAlignment="Center" HorizontalAlignment="Center">
+        <StackPanel Grid.ColumnSpan="3" Grid.Row="2" Orientation="Horizontal" Margin="-5" Width="150" VerticalAlignment="Center" HorizontalAlignment="Center">
             <Button x:Name="signIn" MouseMove="signIn_MouseEnter" MouseLeave="signIn_MouseLeave" Width="50" BorderThickness="1" BorderBrush="#00b4fe" Background="Blue" Foreground="Yellow" Content="Войти" Margin="5" Height="40" Padding="10" Click="signIn_Click">
                 <Button.Style>
                     <Style TargetType="Button">
@@ -35,7 +49,7 @@
                                     <Border CornerRadius="5"
                                         Background="{TemplateBinding Background}">
                                             <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
                                     </Border>
                                 </ControlTemplate>
                             </Setter.Value>
@@ -43,7 +57,9 @@
                     </Style>
                 </Button.Style>
             </Button>
-            <Button x:Name="registration" Width="85" MouseMove="reg_MouseEnter" MouseLeave="reg_MouseLeave" BorderThickness="1" BorderBrush="#00b4fe" Background="Blue" Foreground="Yellow" Content="Регистрация" Margin="5" Height="40" Padding="10" Click="registration_Click">
+            <Button x:Name="registration" Width="85" MouseMove="reg_MouseEnter" MouseLeave="reg_MouseLeave"
+                    BorderThickness="1" BorderBrush="#00b4fe" Background="Blue" Foreground="Yellow"
+                    Content="Регистрация" Margin="5" Height="40" Padding="10" Click="registration_Click">
                 <Button.Style>
     <Style TargetType="Button">
         <Setter Property="Template">
@@ -52,7 +68,7 @@
                     <Border CornerRadius="5"
                         Background="{TemplateBinding Background}">
                             <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
-                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
                     </Border>
                 </ControlTemplate>
             </Setter.Value>
@@ -61,7 +77,12 @@
 </Button.Style>
             </Button>
         </StackPanel>
-        <TextBlock x:Name="restorePass" TextDecorations="Underline" Text="Пароль забыт?" Grid.ColumnSpan="3" Grid.Row="4" Width="150" TextAlignment="Center" Foreground="#00b4fe" Cursor="Hand">
-        </TextBlock>
+
+        <StackPanel Grid.Row="3" Grid.ColumnSpan="3" Height="auto" Orientation="Horizontal" VerticalAlignment="Bottom" Margin="5">
+            <CheckBox x:Name="GuestLogin"></CheckBox>
+            <TextBlock Foreground="Yellow" Text=" Зайти, как гость"></TextBlock>
+        </StackPanel>
+        <TextBlock  Grid.Row="4" Grid.ColumnSpan="3" Text="{Binding TimeNow}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="White"
+                    FontStretch="UltraExpanded" FontFamily="Cosolas" />
     </Grid>
 </Window>
