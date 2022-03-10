@@ -26,6 +26,7 @@ namespace ForExperiments
             };
             timer.Tick += (o, t) => { TimeShow.Text = DateTime.Now.ToString(); };
             timer.Start();
+
         }
 
         public void ShowViewModel()
@@ -42,6 +43,21 @@ namespace ForExperiments
                 $"Logical Drives:\n{String.Join('\n', Environment.GetLogicalDrives())}\nhow much processors: {Environment.ProcessorCount}\n" +
                 $"System is 64bit?: {Environment.Is64BitOperatingSystem}\nOS version: {Environment.OSVersion}\nMachine name: {Environment.MachineName}\n" +
                 $".NET version: {Environment.Version}\nSystem directory: {Environment.SystemDirectory}");
+        }
+
+        private void RubTabItemList_click(object sender, RoutedEventArgs e)
+        {
+            TabItemList.Focus();
+        }
+
+        private void RubTabItemTable_click(object sender, RoutedEventArgs e)
+        {
+            TabItemTable.Focus();
+        }
+
+        private void AboutApp_click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Приложение написано на C#10, .NET6, WPF\nПредназначено для личного использования, как показатель процесса обучения...");
         }
     }
 }
