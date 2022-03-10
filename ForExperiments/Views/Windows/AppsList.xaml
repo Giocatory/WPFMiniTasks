@@ -58,13 +58,13 @@
                             <TextBlock x:Name="DescriptionQuestionFour" Text="   1.4 Senior" FontSize="12" MouseEnter="DescriptTitleFour_MouseEnter" MouseLeave="DescriptionTitleFour_MouseLeave"/>
                             <TextBlock x:Name="DescriptionQuestionFive" Text="   1.5 Тесты" FontSize="12" MouseEnter="DescriptTitleFive_MouseEnter" MouseLeave="DescriptionTitleFive_MouseLeave"/>
 
-                            <TextBlock x:Name="MiniProjTitle" Text="2) Мини проеты, для отработки навыков:" FontSize="13" FontWeight="Bold" MouseEnter="DescriptTitleFive_MouseEnter" MouseLeave="DescriptionTitleFive_MouseLeave"></TextBlock>
-                            <TextBlock x:Name="MiniProjCalculator" Text="   2.1 Калькулятор" FontSize="12"></TextBlock>
-                            <TextBlock x:Name="MiniProjNotebook" Text="   2.2 Блокнот" FontSize="12"></TextBlock>
-                            <TextBlock x:Name="MiniProjCrossesAndZero" Text="   2.3 Крестики нолики" FontSize="12"></TextBlock>
-                            <TextBlock x:Name="MiniProjPasswordGenerate" Text="   2.4 Генератор паролей" FontSize="12"></TextBlock>
-                            <TextBlock x:Name="MiniProjResumeCreator" Text="   2.5 Создатель резюме" FontSize="12"></TextBlock>
-                            <TextBlock x:Name="MiniProjPaint" Text="   2.5 Мини Paint" FontSize="12"></TextBlock>
+                            <TextBlock x:Name="MiniProjTitle" Text="2) Мини проеты, для отработки навыков:" FontSize="13" FontWeight="Bold" MouseEnter="MiniProjTitle_MouseEnter" MouseLeave="MiniProjTitle_MouseLeave"></TextBlock>
+                            <TextBlock x:Name="MiniProjCalculator" Text="   2.1 Калькулятор" FontSize="12" MouseEnter="MiniProjCalculator_MouseEnter" MouseLeave="MiniProjCalculator_MouseLeave"></TextBlock>
+                            <TextBlock x:Name="MiniProjNotebook" Text="   2.2 Блокнот" FontSize="12" MouseEnter="MiniProjNotebook_MouseEnter" MouseLeave="MiniProjNotebook_MouseLeave"></TextBlock>
+                            <TextBlock x:Name="MiniProjCrossesAndZero" Text="   2.3 Крестики нолики" FontSize="12" MouseEnter="MiniProjCrossesAndZero_MouseEnter" MouseLeave="MiniProjCrossesAndZero_MouseLeave"></TextBlock>
+                            <TextBlock x:Name="MiniProjPasswordGenerate" Text="   2.4 Генератор паролей" FontSize="12" MouseEnter="MiniProjPasswordGenerate_MouseEnter" MouseLeave="MiniProjPasswordGenerate_MouseLeave"></TextBlock>
+                            <TextBlock x:Name="MiniProjResumeCreator" Text="   2.5 Создатель резюме" FontSize="12" MouseEnter="MiniProjResumeCreator_MouseEnter" MouseLeave="MiniProjResumeCreator_MouseLeave"></TextBlock>
+                            <TextBlock x:Name="MiniProjPaint" Text="   2.5 Мини Paint" FontSize="12" MouseEnter="MiniProjPaint_MouseEnter" MouseLeave="MiniProjPaint_MouseLeave"></TextBlock>
 
                             <TextBlock Text="3) Приложения для уровня Junior" FontSize="13" FontWeight="Bold"></TextBlock>
                             <TextBlock Text="   3.1 Мессенджер (+видео связь)" FontSize="12"></TextBlock>

@@ -107,6 +107,47 @@ namespace ForExperiments
             DescriptionText.Text = "Все вопросы с собеседований собраны в один тест, благодаря которому, вы можете проверить свои знания, при подготовке к собеседованию.\nЕсли будут предложения и пожелания, напишите мне\ngiocatory@yandex.ru";
 
         }
+        private void MiniProjTitle_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            MiniProjTitle.TextDecorations = TextDecorations.Underline;
+            DescriptionText.Text = "Элементарные приложения, которые делают все, во время обучения программированию.\nЕсли будут предложения и пожелания, напишите мне\ngiocatory@yandex.ru";
+        }
+
+        private void MiniProjCalculator_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            MiniProjCalculator.TextDecorations = TextDecorations.Underline;
+            DescriptionText.Text = "Приложение - Калькулятор.\nЕсли будут предложения и пожелания, напишите мне\ngiocatory@yandex.ru";
+        }
+
+        private void MiniProjNotebook_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            MiniProjNotebook.TextDecorations = TextDecorations.Underline;
+            DescriptionText.Text = "Простейший блокнот.\nЕсли будут предложения и пожелания, напишите мне\ngiocatory@yandex.ru";
+        }
+
+        private void MiniProjCrossesAndZero_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            MiniProjCrossesAndZero.TextDecorations = TextDecorations.Underline;
+            DescriptionText.Text = "Игра в \"Крестики нолики\"\nЕсли будут предложения и пожелания, напишите мне\ngiocatory@yandex.ru";
+        }
+
+        private void MiniProjPasswordGenerate_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            MiniProjPasswordGenerate.TextDecorations = TextDecorations.Underline;
+            DescriptionText.Text = "Генератор паролей с разными условиями.\nЕсли будут предложения и пожелания, напишите мне\ngiocatory@yandex.ru";
+        }
+
+        private void MiniProjResumeCreator_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            MiniProjResumeCreator.TextDecorations = TextDecorations.Underline;
+            DescriptionText.Text = "Создатель резюме(Записываете необходимые данные и получаете готовое резюме, по шаблону)\nЕсли будут предложения и пожелания, напишите мне\ngiocatory@yandex.ru";
+        }
+
+        private void MiniProjPaint_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            MiniProjPaint.TextDecorations = TextDecorations.Underline;
+            DescriptionText.Text = "Реализация простейшего редактора для рисования.\nЕсли будут предложения и пожелания, напишите мне\ngiocatory@yandex.ru";
+        }
 
         // mouse leave
         private void DescriptionTitleList_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
@@ -133,6 +174,42 @@ namespace ForExperiments
         {
             DescriptionQuestionFive.TextDecorations = null;
         }
+        private void MiniProjTitle_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            MiniProjTitle.TextDecorations = null;
+        }
+
+        private void MiniProjCalculator_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            MiniProjCalculator.TextDecorations = null;
+        }
+
+        private void MiniProjNotebook_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            MiniProjNotebook.TextDecorations = null;
+        }
+
+        private void MiniProjCrossesAndZero_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            MiniProjCrossesAndZero.TextDecorations = null;
+        }
+
+        private void MiniProjPasswordGenerate_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            MiniProjPasswordGenerate.TextDecorations = null;
+        }
+
+        private void MiniProjResumeCreator_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            MiniProjResumeCreator.TextDecorations = null;
+        }
+
+        private void MiniProjPaint_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
+        {
+            MiniProjPaint.TextDecorations = null;
+        }
         #endregion hover on list titles
+
+
     }
 }
