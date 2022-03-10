@@ -4,8 +4,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="clr-namespace:ForExperiments.ViewModels"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
-        Title="{Binding Title}" WindowStartupLocation="CenterScreen" Width="600" Height="400" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto">
+        Title="{Binding Title}" WindowStartupLocation="CenterScreen" Width="600" Height="400" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto"
+        FontFamily="Consolas">
 
     <Window.DataContext>
         <vm:AppListWindowViewModel />
@@ -37,7 +39,14 @@
         </Menu>
 
         <StackPanel Grid.Row="1" Grid.Column="0" MaxWidth="300" Width="300" MinWidth="200" Margin="5, 10, 0, 5" CanVerticallyScroll="True">
-            <TextBlock Text="1) Калькулятор"></TextBlock>
+                <TextBlock Text="1) Вопросы на собеседования:" FontSize="13" FontWeight="Bold"></TextBlock>
+            <TextBlock Text="   1.1 Общие" FontSize="12"></TextBlock>
+            <TextBlock Text="   1.2 Junior" FontSize="12"></TextBlock>
+            <TextBlock Text="   1.3 Middle" FontSize="12"></TextBlock>
+            <TextBlock Text="   1.3 Senior" FontSize="12"></TextBlock>
+
+            <TextBlock Text="2) Мини проеты, для отработки навыков:" FontSize="13" FontWeight="Bold"></TextBlock>
+            <TextBlock Text="   2.1 Калькулятор" FontSize="12"></TextBlock>
         </StackPanel>
 
         <TextBlock Text="kj;lb" Grid.Row="1" Grid.Column="1" Width="280" MaxWidth="280" MinWidth="150"  Margin="5, 10, 0, 5"
