@@ -66,16 +66,16 @@
                             <TextBlock x:Name="MiniProjResumeCreator" Text="   2.5 Создатель резюме" FontSize="12" MouseEnter="MiniProjResumeCreator_MouseEnter" MouseLeave="MiniProjResumeCreator_MouseLeave"></TextBlock>
                             <TextBlock x:Name="MiniProjPaint" Text="   2.5 Мини Paint" FontSize="12" MouseEnter="MiniProjPaint_MouseEnter" MouseLeave="MiniProjPaint_MouseLeave"></TextBlock>
 
-                            <TextBlock Text="3) Приложения для уровня Junior" FontSize="13" FontWeight="Bold"></TextBlock>
-                            <TextBlock Text="   3.1 Мессенджер (+видео связь)" FontSize="12"></TextBlock>
-                            <TextBlock Text="   3.2 Видео и музыкальный плеер" FontSize="12"></TextBlock>
-                            <TextBlock Text="   3.3 Просмотрщик PDF, JPG, PNG, GIF..." FontSize="12"></TextBlock>
-                            <TextBlock Text="   3.4 Рассылки на почту, мессенджеры, соц. сети" FontSize="12"></TextBlock>
+                            <TextBlock x:Name="JunAppList" Text="3) Приложения для уровня Junior" FontSize="13" FontWeight="Bold"></TextBlock>
+                            <TextBlock x:Name="JunAppMessenger" Text="   3.1 Мессенджер (+видео связь)" FontSize="12"></TextBlock>
+                            <TextBlock x:Name="JunAppMediaPlayer" Text="   3.2 Видео и музыкальный плеер" FontSize="12"></TextBlock>
+                            <TextBlock x:Name="JunAppFileViewer" Text="   3.3 Просмотрщик PDF, JPG, PNG, GIF..." FontSize="12"></TextBlock>
+                            <TextBlock x:Name="JunAppMessageSender" Text="   3.4 Рассылки на почту, мессенджеры, соц. сети" FontSize="12"></TextBlock>
 
-                            <TextBlock Text="4) Мини игры" FontSize="13" FontWeight="Bold"></TextBlock>
-                            <TextBlock Text="   4.1 Conway's Game of Life" FontSize="12"></TextBlock>
-                            <TextBlock Text="   4.2 2D Rally" FontSize="12"></TextBlock>
-                            <TextBlock Text="   4.3 Space Invaders" FontSize="12"></TextBlock>
+                            <TextBlock x:Name="GameList" Text="4) Мини игры" FontSize="13" FontWeight="Bold"></TextBlock>
+                            <TextBlock x:Name="GameCGL" Text="   4.1 Conway's Game of Life" FontSize="12"></TextBlock>
+                            <TextBlock x:Name="GameRally" Text="   4.2 2D Rally" FontSize="12"></TextBlock>
+                            <TextBlock x:Name="GameInvaders" Text="   4.3 Space Invaders" FontSize="12"></TextBlock>
                         </StackPanel>
                     </Border>
 
