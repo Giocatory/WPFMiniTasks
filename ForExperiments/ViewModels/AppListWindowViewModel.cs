@@ -18,12 +18,6 @@ namespace ForExperiments.ViewModels
 
         #endregion Заголовок Окна
 
-        #region Descriptions for app list
-
-        private string InterviewЙuestions = "Постарался собрать вопросы, которые могут попадаться на собеседованиях C# программистов, а так же подробные ответы\nЕсли будут предложения и пожелания, напишите мне\ngiocatory@yandex.ru";
-
-        #endregion Descriptions for app list
-
         #region Команды
 
         public ICommand CloseApplicationCommand { get; }
