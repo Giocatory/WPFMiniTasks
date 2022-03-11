@@ -19,7 +19,7 @@ namespace ForExperiments.ViewModels
         #endregion Заголовок Окна
 
         #region Команды
-
+        // 1
         public ICommand CloseApplicationCommand { get; }
 
         private void OnCloseApplicationCommandExecuted(object p)

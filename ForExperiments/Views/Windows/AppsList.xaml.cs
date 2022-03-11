@@ -27,6 +27,8 @@ namespace ForExperiments
             timer.Tick += (o, t) => { TimeShow.Text = DateTime.Now.ToString(); };
             timer.Start();
             #endregion не прерывный показ текущего времени (внизу окна)
+
+
         }
 
         #region Welcome message box
@@ -69,14 +71,13 @@ namespace ForExperiments
         #endregion switch tab Items
 
 
-
         #region hover on list titles
         // mouse enter
-        private void DescriptTitle_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
+        /*private void DescriptTitle_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
             DecriptionQuestionsList.TextDecorations = TextDecorations.Underline;
             DescriptionText.Text = "Постарался собрать вопросы, которые могут попадаться на собеседованиях C# программистов, а так же дать подробные ответы.\nЕсли будут предложения и пожелания, напишите мне\ngiocatory@yandex.ru";
-        }
+        }*/
 
         private void DescriptTitleOne_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
@@ -208,8 +209,8 @@ namespace ForExperiments
         {
             MiniProjPaint.TextDecorations = null;
         }
-        #endregion hover on list titles
 
+        #endregion hover on list titles
 
     }
 }

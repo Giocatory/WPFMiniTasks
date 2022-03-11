@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="clr-namespace:ForExperiments.ViewModels"
         xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:local="clr-namespace:ForExperiments"
         mc:Ignorable="d"
         Title="{Binding Title}" WindowStartupLocation="CenterScreen" Width="740" Height="400" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto"
         FontFamily="Consolas">
@@ -75,7 +76,7 @@
                             <TextBlock x:Name="GameList" Text="4) Мини игры" FontSize="13" FontWeight="Bold"/>
                             <TextBlock x:Name="GameCGL" Text="   4.1 Conway's Game of Life" FontSize="12"/>
                             <TextBlock x:Name="GameRally" Text="   4.2 2D Rally" FontSize="12"/>
-                            <TextBlock x:Name="GameInvaders" Text="   4.3 Space Invaders" FontSize="12"/>
+                            <TextBlock x:Name="GameInvaders" Text="   4.3 Space Invaders" FontSize="12" MouseEnter="GameInvaders_MouseEnter"/>
                         </StackPanel>
                     </Border>
 
