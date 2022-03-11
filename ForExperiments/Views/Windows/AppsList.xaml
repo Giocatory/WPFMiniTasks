@@ -4,8 +4,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="clr-namespace:ForExperiments.ViewModels"
-        xmlns:sys="clr-namespace:System;assembly=mscorlib"
-        xmlns:local="clr-namespace:ForExperiments"
         mc:Ignorable="d"
         Title="{Binding Title}" WindowStartupLocation="CenterScreen" Width="740" Height="400" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto"
         FontFamily="Consolas">
@@ -43,51 +41,51 @@
             <TabItem Header="List" Height="0" x:Name="TabItemList">
                 <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="auto"/>
-                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
                     </Grid.ColumnDefinitions>
 
                     <Border Grid.Column="0" BorderThickness="0,0,2,0" BorderBrush="#161f56">
                         <StackPanel Grid.Column="0" MaxWidth="350" Width="350" MinWidth="200" Margin="5, 10, 0, 5" CanVerticallyScroll="True">
-                            <TextBlock x:Name="DecriptionQuestionsList" Text="1) Вопросы на собеседования:" FontSize="13" FontWeight="Bold" MouseEnter="DescriptTitle_MouseEnter" MouseLeave="DescriptionTitleList_MouseLeave"/>
-                            <TextBlock x:Name="DescriptionQuestionOne" Text="   1.1 Общие" FontSize="12" MouseEnter="DescriptTitleOne_MouseEnter" MouseLeave="DescriptionTitleOne_MouseLeave"/>
-                            <TextBlock x:Name="DescriptionQuestionTwo" Text="   1.2 Junior" FontSize="12" MouseEnter="DescriptTitleTwo_MouseEnter" MouseLeave="DescriptionTitleTwo_MouseLeave"/>
-                            <TextBlock x:Name="DescriptionQuestionThree" Text="   1.3 Middle" FontSize="12" MouseEnter="DescriptTitleThree_MouseEnter" MouseLeave="DescriptionTitleThree_MouseLeave"/>
-                            <TextBlock x:Name="DescriptionQuestionFour" Text="   1.4 Senior" FontSize="12" MouseEnter="DescriptTitleFour_MouseEnter" MouseLeave="DescriptionTitleFour_MouseLeave"/>
-                            <TextBlock x:Name="DescriptionQuestionFive" Text="   1.5 Тесты" FontSize="12" MouseEnter="DescriptTitleFive_MouseEnter" MouseLeave="DescriptionTitleFive_MouseLeave"/>
+                            <TextBlock x:Name="DecriptionQuestionsList" Text="1) Вопросы на собеседования:" FontSize="13" FontWeight="Bold" MouseEnter="DescriptTitle_MouseEnter" MouseLeave="DescriptionTitleList_MouseLeave" />
+                            <TextBlock x:Name="DescriptionQuestionOne" Text="   1.1 Общие" FontSize="12" MouseEnter="DescriptTitleOne_MouseEnter" MouseLeave="DescriptionTitleOne_MouseLeave" />
+                            <TextBlock x:Name="DescriptionQuestionTwo" Text="   1.2 Junior" FontSize="12" MouseEnter="DescriptTitleTwo_MouseEnter" MouseLeave="DescriptionTitleTwo_MouseLeave" />
+                            <TextBlock x:Name="DescriptionQuestionThree" Text="   1.3 Middle" FontSize="12" MouseEnter="DescriptTitleThree_MouseEnter" MouseLeave="DescriptionTitleThree_MouseLeave" />
+                            <TextBlock x:Name="DescriptionQuestionFour" Text="   1.4 Senior" FontSize="12" MouseEnter="DescriptTitleFour_MouseEnter" MouseLeave="DescriptionTitleFour_MouseLeave" />
+                            <TextBlock x:Name="DescriptionQuestionFive" Text="   1.5 Тесты" FontSize="12" MouseEnter="DescriptTitleFive_MouseEnter" MouseLeave="DescriptionTitleFive_MouseLeave" />
 
-                            <TextBlock x:Name="MiniProjTitle" Text="2) Мини проеты, для отработки навыков:" FontSize="13" FontWeight="Bold" MouseEnter="MiniProjTitle_MouseEnter" MouseLeave="MiniProjTitle_MouseLeave"/>
-                            <TextBlock x:Name="MiniProjCalculator" Text="   2.1 Калькулятор" FontSize="12" MouseEnter="MiniProjCalculator_MouseEnter" MouseLeave="MiniProjCalculator_MouseLeave"/>
-                            <TextBlock x:Name="MiniProjNotebook" Text="   2.2 Блокнот" FontSize="12" MouseEnter="MiniProjNotebook_MouseEnter" MouseLeave="MiniProjNotebook_MouseLeave"/>
-                            <TextBlock x:Name="MiniProjCrossesAndZero" Text="   2.3 Крестики нолики" FontSize="12" MouseEnter="MiniProjCrossesAndZero_MouseEnter" MouseLeave="MiniProjCrossesAndZero_MouseLeave"/>
-                            <TextBlock x:Name="MiniProjPasswordGenerate" Text="   2.4 Генератор паролей" FontSize="12" MouseEnter="MiniProjPasswordGenerate_MouseEnter" MouseLeave="MiniProjPasswordGenerate_MouseLeave"/>
-                            <TextBlock x:Name="MiniProjResumeCreator" Text="   2.5 Создатель резюме" FontSize="12" MouseEnter="MiniProjResumeCreator_MouseEnter" MouseLeave="MiniProjResumeCreator_MouseLeave"/>
-                            <TextBlock x:Name="MiniProjPaint" Text="   2.5 Мини Paint" FontSize="12" MouseEnter="MiniProjPaint_MouseEnter" MouseLeave="MiniProjPaint_MouseLeave"/>
+                            <TextBlock x:Name="MiniProjTitle" Text="2) Мини проеты, для отработки навыков:" FontSize="13" FontWeight="Bold" MouseEnter="MiniProjTitle_MouseEnter" MouseLeave="MiniProjTitle_MouseLeave" />
+                            <TextBlock x:Name="MiniProjCalculator" Text="   2.1 Калькулятор" FontSize="12" MouseEnter="MiniProjCalculator_MouseEnter" MouseLeave="MiniProjCalculator_MouseLeave" />
+                            <TextBlock x:Name="MiniProjNotebook" Text="   2.2 Блокнот" FontSize="12" MouseEnter="MiniProjNotebook_MouseEnter" MouseLeave="MiniProjNotebook_MouseLeave" />
+                            <TextBlock x:Name="MiniProjCrossesAndZero" Text="   2.3 Крестики нолики" FontSize="12" MouseEnter="MiniProjCrossesAndZero_MouseEnter" MouseLeave="MiniProjCrossesAndZero_MouseLeave" />
+                            <TextBlock x:Name="MiniProjPasswordGenerate" Text="   2.4 Генератор паролей" FontSize="12" MouseEnter="MiniProjPasswordGenerate_MouseEnter" MouseLeave="MiniProjPasswordGenerate_MouseLeave" />
+                            <TextBlock x:Name="MiniProjResumeCreator" Text="   2.5 Создатель резюме" FontSize="12" MouseEnter="MiniProjResumeCreator_MouseEnter" MouseLeave="MiniProjResumeCreator_MouseLeave" />
+                            <TextBlock x:Name="MiniProjPaint" Text="   2.5 Мини Paint" FontSize="12" MouseEnter="MiniProjPaint_MouseEnter" MouseLeave="MiniProjPaint_MouseLeave" />
 
-                            <TextBlock x:Name="JunAppList" Text="3) Приложения для уровня Junior" FontSize="13" FontWeight="Bold"/>
-                            <TextBlock x:Name="JunAppMessenger" Text="   3.1 Мессенджер (+видео связь)" FontSize="12"/>
-                            <TextBlock x:Name="JunAppMediaPlayer" Text="   3.2 Видео и музыкальный плеер" FontSize="12"/>
-                            <TextBlock x:Name="JunAppFileViewer" Text="   3.3 Просмотрщик PDF, JPG, PNG, GIF..." FontSize="12"/>
-                            <TextBlock x:Name="JunAppMessageSender" Text="   3.4 Рассылки на почту, мессенджеры, соц. сети" FontSize="12"/>
+                            <TextBlock x:Name="JunAppList" Text="3) Приложения для уровня Junior" FontSize="13" FontWeight="Bold" />
+                            <TextBlock x:Name="JunAppMessenger" Text="   3.1 Мессенджер (+видео связь)" FontSize="12" />
+                            <TextBlock x:Name="JunAppMediaPlayer" Text="   3.2 Видео и музыкальный плеер" FontSize="12" />
+                            <TextBlock x:Name="JunAppFileViewer" Text="   3.3 Просмотрщик PDF, JPG, PNG, GIF..." FontSize="12" />
+                            <TextBlock x:Name="JunAppMessageSender" Text="   3.4 Рассылки на почту, мессенджеры, соц. сети" FontSize="12" />
 
-                            <TextBlock x:Name="GameList" Text="4) Мини игры" FontSize="13" FontWeight="Bold"/>
-                            <TextBlock x:Name="GameCGL" Text="   4.1 Conway's Game of Life" FontSize="12"/>
-                            <TextBlock x:Name="GameRally" Text="   4.2 2D Rally" FontSize="12"/>
-                            <TextBlock x:Name="GameInvaders" Text="   4.3 Space Invaders" FontSize="12" MouseEnter="GameInvaders_MouseEnter"/>
+                            <TextBlock x:Name="GameList" Text="4) Мини игры" FontSize="13" FontWeight="Bold" />
+                            <TextBlock x:Name="GameCGL" Text="   4.1 Conway's Game of Life" FontSize="12" />
+                            <TextBlock x:Name="GameRally" Text="   4.2 2D Rally" FontSize="12" />
+                            <TextBlock x:Name="GameInvaders" Text="   4.3 Space Invaders" FontSize="12" />
                         </StackPanel>
                     </Border>
 
                     <TextBlock x:Name="DescriptionText" Text="{Binding Description}" Grid.Column="1" Width="350" MaxWidth="350" MinWidth="150"  Margin="5, 10, 0, 5"
                                HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" Foreground="#f5d3a4"  FontSize="13" FontWeight="Bold"
-                               TextWrapping="Wrap"/>
+                               TextWrapping="Wrap" />
                 </Grid>
             </TabItem>
             <TabItem Header="Table" Height="0" x:Name="TabItemTable"></TabItem>
         </TabControl>
 
-        <TextBlock x:Name="TimeShow" Text="время" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="2" Grid.ColumnSpan="2" FontWeight="Bold" FontSize="15"/>
+        <TextBlock x:Name="TimeShow" Text="время" VerticalAlignment="Bottom" HorizontalAlignment="Center" Grid.Row="2" Grid.ColumnSpan="2" FontWeight="Bold" FontSize="15" />
     </Grid>
 </Window>

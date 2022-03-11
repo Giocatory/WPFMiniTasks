@@ -11,13 +11,13 @@ namespace ForExperiments
     /// </summary>
     public partial class AppsList : Window
     {
-
         public AppsList()
         {
             InitializeComponent();
             this.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), @$"{Environment.CurrentDirectory}\img\cofee.jpg")));
 
             #region не прерывный показ текущего времени (внизу окна)
+
             // не прерывный показ текущего времени (внизу окна)
             var timer = new System.Windows.Threading.DispatcherTimer
             {
@@ -26,21 +26,23 @@ namespace ForExperiments
             };
             timer.Tick += (o, t) => { TimeShow.Text = DateTime.Now.ToString(); };
             timer.Start();
+
             #endregion не прерывный показ текущего времени (внизу окна)
-
-
         }
 
         #region Welcome message box
+
         public string? ViewModel { get; set; }
 
         public void ShowViewModel()
         {
             MessageBox.Show(ViewModel);
         }
+
         #endregion Welcome message box
 
         #region Menu items
+
         private void MenuItemEnv_Click(object sender, RoutedEventArgs e)
         {
             // работа с системными инструментами
@@ -51,13 +53,16 @@ namespace ForExperiments
                 $"System is 64bit?: {Environment.Is64BitOperatingSystem}\nOS version: {Environment.OSVersion}\nMachine name: {Environment.MachineName}\n" +
                 $".NET version: {Environment.Version}\nSystem directory: {Environment.SystemDirectory}");
         }
+
         private void AboutApp_click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Приложение написано на C#10, .NET6, WPF\nПредназначено для личного использования, как показатель процесса обучения...");
         }
+
         #endregion Menu items
 
         #region switch tab Items
+
         // switch tab Items
         private void RubTabItemList_click(object sender, RoutedEventArgs e)
         {
@@ -68,46 +73,48 @@ namespace ForExperiments
         {
             TabItemTable.Focus();
         }
+
         #endregion switch tab Items
 
-
         #region hover on list titles
+
         // mouse enter
-        /*private void DescriptTitle_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
+        private void DescriptTitle_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
             DecriptionQuestionsList.TextDecorations = TextDecorations.Underline;
             DescriptionText.Text = "Постарался собрать вопросы, которые могут попадаться на собеседованиях C# программистов, а так же дать подробные ответы.\nЕсли будут предложения и пожелания, напишите мне\ngiocatory@yandex.ru";
-        }*/
+        }
 
         private void DescriptTitleOne_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
             DescriptionQuestionOne.TextDecorations = TextDecorations.Underline;
             DescriptionText.Text = "Общие вопросы, которые встречаются на собеседованиях, разного уровня и знаний программистов.\nЕсли будут предложения и пожелания, напишите мне\ngiocatory@yandex.ru";
         }
+
         private void DescriptTitleTwo_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
             DescriptionQuestionTwo.TextDecorations = TextDecorations.Underline;
             DescriptionText.Text = "Чаще всего, встречающиеся вопросы на собеседованиях программистов, уровня Junior (Начинающий)\nЕсли будут предложения и пожелания, напишите мне\ngiocatory@yandex.ru";
-
         }
+
         private void DescriptTitleThree_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
             DescriptionQuestionThree.TextDecorations = TextDecorations.Underline;
             DescriptionText.Text = "Чаще всего, встречающиеся вопросы на собеседованиях программистов, уровня Middle (Уровень знаний по середине, между Junior и Senior)\nЕсли будут предложения и пожелания, напишите мне\ngiocatory@yandex.ru";
-
         }
+
         private void DescriptTitleFour_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
             DescriptionQuestionFour.TextDecorations = TextDecorations.Underline;
             DescriptionText.Text = "Чаще всего, встречающиеся вопросы на собеседованиях программистов, уровня Senior (Опытные программисты)\nЕсли будут предложения и пожелания, напишите мне\ngiocatory@yandex.ru";
-
         }
+
         private void DescriptTitleFive_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
             DescriptionQuestionFive.TextDecorations = TextDecorations.Underline;
             DescriptionText.Text = "Все вопросы с собеседований собраны в один тест, благодаря которому, вы можете проверить свои знания, при подготовке к собеседованию.\nЕсли будут предложения и пожелания, напишите мне\ngiocatory@yandex.ru";
-
         }
+
         private void MiniProjTitle_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
             MiniProjTitle.TextDecorations = TextDecorations.Underline;
@@ -155,26 +162,32 @@ namespace ForExperiments
         {
             DecriptionQuestionsList.TextDecorations = null;
         }
+
         private void DescriptionTitleOne_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
         {
             DescriptionQuestionOne.TextDecorations = null;
         }
+
         private void DescriptionTitleTwo_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
         {
             DescriptionQuestionTwo.TextDecorations = null;
         }
+
         private void DescriptionTitleThree_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
         {
             DescriptionQuestionThree.TextDecorations = null;
         }
+
         private void DescriptionTitleFour_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
         {
             DescriptionQuestionFour.TextDecorations = null;
         }
+
         private void DescriptionTitleFive_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
         {
             DescriptionQuestionFive.TextDecorations = null;
         }
+
         private void MiniProjTitle_MouseLeave(object sender, System.Windows.Input.MouseEventArgs e)
         {
             MiniProjTitle.TextDecorations = null;
@@ -211,6 +224,5 @@ namespace ForExperiments
         }
 
         #endregion hover on list titles
-
     }
 }
