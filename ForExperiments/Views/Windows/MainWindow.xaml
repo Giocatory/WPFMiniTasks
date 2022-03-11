@@ -34,12 +34,12 @@
             <Label Content="Логин" FontFamily="Arial" FontWeight="Bold" VerticalAlignment="Center"
                    HorizontalAlignment="Center" Margin="-5" Foreground="White" FontSize="15" VerticalContentAlignment="Center">
             </Label>
-            <TextBox x:Name="login" BorderThickness="1" BorderBrush="#00b4fe" Margin="5" Width="200" Height="20" VerticalAlignment="Center" HorizontalAlignment="Center" AutoWordSelection="True" />
+            <TextBox x:Name="login" FontSize="12" Foreground="#f5d3a4" BorderThickness="1" BorderBrush="#00b4fe" Margin="5" Width="200" Height="25" VerticalAlignment="Center" HorizontalAlignment="Center" AutoWordSelection="True" />
             <Label Content="Пароль" FontFamily="Arial" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="-5" Foreground="White" FontSize="15" HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
             </Label>
-            <PasswordBox x:Name="password" BorderThickness="1" BorderBrush="#00b4fe" Margin="5" Width="200" Height="20" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" PasswordChar="*" Password="" />
+            <PasswordBox x:Name="password" FontSize="12" Foreground="#f5d3a4" BorderThickness="1" BorderBrush="#00b4fe" Margin="5" Width="200" Height="25" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" PasswordChar="*" Password="" />
         </StackPanel>
-        <StackPanel Grid.ColumnSpan="3" Grid.Row="2" Orientation="Horizontal" Margin="-5" Width="150" VerticalAlignment="Center" HorizontalAlignment="Center">
+        <StackPanel Grid.ColumnSpan="3" Grid.Row="2" Orientation="Horizontal" Margin="0" Width="150" VerticalAlignment="Center" HorizontalAlignment="Center">
             <Button x:Name="signIn" MouseMove="signIn_MouseEnter" MouseLeave="signIn_MouseLeave" Width="50" BorderThickness="1" BorderBrush="#00b4fe" Background="Blue" Foreground="Yellow" Content="Войти" Margin="5" Height="40" Padding="10" Click="signIn_Click">
                 <Button.Style>
                     <Style TargetType="Button">
@@ -79,7 +79,7 @@
         </StackPanel>
 
         <StackPanel Grid.Row="3" Grid.ColumnSpan="3" Height="auto" Orientation="Horizontal" VerticalAlignment="Bottom" Margin="5">
-            <CheckBox x:Name="GuestLogin"></CheckBox>
+            <CheckBox x:Name="GuestLogin" Background="Yellow"></CheckBox>
             <TextBlock Foreground="Yellow" Text=" Зайти, как гость"></TextBlock>
         </StackPanel>
         <TextBlock  Grid.Row="4" Grid.ColumnSpan="3" Text="{Binding TimeNow}" HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="White"

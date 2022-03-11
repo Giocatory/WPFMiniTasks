@@ -6,17 +6,17 @@
         xmlns:vm="clr-namespace:ForExperiments.ViewModels"
         mc:Ignorable="d"
         xml:space="default"
-        Title="{Binding Title}" Height="180" Width="550" WindowStartupLocation="CenterScreen" FontFamily="Arial" ResizeMode="NoResize">
+        Title="{Binding Title}" Height="200" Width="550" WindowStartupLocation="CenterScreen" FontFamily="Arial" ResizeMode="NoResize">
     <Window.DataContext>
         <vm:RegWindowViewModel></vm:RegWindowViewModel>
     </Window.DataContext>
     <DockPanel>
-        <Menu DockPanel.Dock="Top" Background="#1b78d7" BorderThickness="0">
-            <MenuItem Header="Файл" BorderThickness="0,0,1,0" BorderBrush="DarkGray" FontFamily="Arial" Foreground="Black">
-                <MenuItem Header="Выход" Command="{Binding CloseApplicationCommand}" FontFamily="Arial" Foreground="Black" />
+        <Menu DockPanel.Dock="Top" Background="#1b78d7" BorderThickness="0" Height="20">
+            <MenuItem Header="Файл" BorderThickness="0,0,1,0" BorderBrush="DarkGray" FontFamily="Arial" Foreground="Black" Height="20">
+                <MenuItem Header="Выход" Command="{Binding CloseApplicationCommand}" FontFamily="Arial" FontSize="15" Height="17"  Margin="0,-15,0,0" Background="#161f56" Foreground="#f5d3a4"/>
             </MenuItem>
-            <MenuItem Header="Помощь" BorderThickness="0,0,1,0" BorderBrush="DarkGray" FontFamily="Arial" Foreground="Black">
-                <MenuItem Header="О программе" Click="aboutProgram" FontFamily="Arial" Foreground="Black"></MenuItem>
+            <MenuItem Header="Помощь" BorderThickness="0,0,1,0" BorderBrush="DarkGray" FontFamily="Arial" Foreground="Black" Height="20">
+                <MenuItem Header="О программе" Click="aboutProgram" FontFamily="Arial" FontSize="15" Height="17"  Margin="0,-15,0,0" Background="#161f56" Foreground="#f5d3a4"></MenuItem>
             </MenuItem>
         </Menu>
         <StatusBar DockPanel.Dock="Bottom">
@@ -39,15 +39,15 @@
                     </Grid.ColumnDefinitions>
 
                     <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.ColumnSpan="3" Margin="5">
-                        <TextBlock Text="Логин: " Margin="5" FontSize="15" FontWeight="Bold" Grid.Column="0" FontFamily="Arial" Foreground="#001830"></TextBlock>
-                        <TextBox x:Name="Login" MinWidth="100" MaxWidth="200" Width="200" Margin="14,5,5,5" BorderBrush="Black" Grid.Column="1"></TextBox>
+                        <TextBlock Text="Логин: " Margin="5" FontSize="15" VerticalAlignment="Center" FontWeight="Bold" Grid.Column="0" FontFamily="Arial" Foreground="#001830"></TextBlock>
+                        <TextBox x:Name="Login" FontSize="15" FontWeight="Bold" VerticalAlignment="Center" MinWidth="100" MaxWidth="200" Width="200" Margin="14,5,5,5" BorderBrush="Black" Grid.Column="1"></TextBox>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="0" Margin="5">
-                        <TextBlock Text="Пароль: " Margin="5" FontSize="15" FontWeight="Bold" Grid.Column="0" FontFamily="Arial" Foreground="#001830"></TextBlock>
-                        <TextBox x:Name="Password" MinWidth="100" MaxWidth="200" Width="200" Margin="5" BorderBrush="Black" Grid.Column="1"></TextBox>
+                        <TextBlock Text="Пароль: " VerticalAlignment="Center" Margin="5" FontSize="15" FontWeight="Bold" Grid.Column="0" FontFamily="Arial" Foreground="#001830"></TextBlock>
+                        <TextBox x:Name="Password" FontSize="15" FontWeight="Bold" VerticalAlignment="Center" MinWidth="100" MaxWidth="200" Width="200" Margin="5" BorderBrush="Black" Grid.Column="1"></TextBox>
                     </StackPanel>
 
-                    <TextBlock Text="{Binding Description}" Grid.Column="2" MaxWidth="250" MinWidth="100" Grid.RowSpan="2" Margin="5" FontFamily="Arial" Foreground="Gold">
+                    <TextBlock Text="{Binding Description}" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" Grid.Column="2" MaxWidth="250" MinWidth="100" Grid.RowSpan="2" Margin="5" FontFamily="Arial" Foreground="Gold">
                     </TextBlock>
 
                     <Button x:Name="ButtonNext" Content="Продолжить" Grid.Row="2" Grid.Column="0" Margin="5" Background="Blue" Foreground="Yellow" Click="NextTabIndex" MouseMove="HoverInButton" MouseLeave="HoverOutButton"
@@ -86,16 +86,16 @@
                     </Grid.ColumnDefinitions>
 
                     <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.ColumnSpan="2">
-                        <TextBlock Text="E-mail: " Margin="5" FontSize="15" FontWeight="Bold" Grid.Column="0" FontFamily="Arial"  Foreground="#001830"></TextBlock>
-                        <TextBox MinWidth="100" MaxWidth="200" Width="200" Margin="14,5,5,5" BorderBrush="Black" Grid.Column="1"></TextBox>
+                        <TextBlock Text="E-mail: " VerticalAlignment="Center" Margin="5" FontSize="15" FontWeight="Bold" Grid.Column="0" FontFamily="Arial"  Foreground="#001830"></TextBlock>
+                        <TextBox  FontSize="15" FontWeight="Bold" VerticalAlignment="Center" MinWidth="100" MaxWidth="200" Width="200" Margin="14,5,5,5" BorderBrush="Black" Grid.Column="1"></TextBox>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.ColumnSpan="2">
-                        <TextBlock Text="Telegramm: " Margin="5" FontSize="15" FontWeight="Bold" Grid.Column="0" FontFamily="Arial"  Foreground="#001830"></TextBlock>
-                        <TextBox MinWidth="100" MaxWidth="167" Width="167" Margin="14,5,5,5" BorderBrush="Black" Grid.Column="1"></TextBox>
+                        <TextBlock Text="Telegramm: " VerticalAlignment="Center" Margin="5" FontSize="15" FontWeight="Bold" Grid.Column="0" FontFamily="Arial"  Foreground="#001830"></TextBlock>
+                        <TextBox FontSize="15" FontWeight="Bold" VerticalAlignment="Center" MinWidth="100" MaxWidth="167" Width="167" Margin="14,5,5,5" BorderBrush="Black" Grid.Column="1"></TextBox>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.ColumnSpan="2">
-                        <TextBlock Text="Тел.: " Margin="5" FontSize="15" FontWeight="Bold" Grid.Column="0" FontFamily="Arial"  Foreground="#001830"></TextBlock>
-                        <TextBox MinWidth="100" MaxWidth="220" Width="215" Margin="14,5,5,5" BorderBrush="Black" Grid.Column="1"></TextBox>
+                        <TextBlock Text="Тел.: " Margin="5" FontSize="15" FontWeight="Bold" VerticalAlignment="Center" Grid.Column="0" FontFamily="Arial"  Foreground="#001830"></TextBlock>
+                        <TextBox FontSize="15" FontWeight="Bold" VerticalAlignment="Center" MinWidth="100" MaxWidth="220" Width="215" Margin="14,5,5,5" BorderBrush="Black" Grid.Column="1"></TextBox>
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.ColumnSpan="3" HorizontalAlignment="Center">
@@ -137,7 +137,7 @@
                         </Button>
                     </StackPanel>
 
-                    <TextBlock Text="{Binding DescriptionFinall}" Grid.Column="2" Grid.RowSpan="4" Foreground="Gold" Margin="0,5,0,0"></TextBlock>
+                    <TextBlock Text="{Binding DescriptionFinall}" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" Grid.Column="2" Grid.RowSpan="3" Foreground="Gold" Margin="0,5,0,0"></TextBlock>
                 </Grid>
             </TabItem>
         </TabControl>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MaterialDesignThemes.Wpf;
+using System;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -15,7 +16,7 @@ namespace ForExperiments
         {
             InitializeComponent();
             this.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), @$"{Environment.CurrentDirectory}\img\cofee.jpg")));
-
+            ShadowAssist.SetShadowDepth(this, ShadowDepth.Depth0);
             #region не прерывный показ текущего времени (внизу окна)
 
             // не прерывный показ текущего времени (внизу окна)
