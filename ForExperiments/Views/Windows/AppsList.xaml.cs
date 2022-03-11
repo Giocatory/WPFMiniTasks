@@ -17,6 +17,7 @@ namespace ForExperiments
             InitializeComponent();
             this.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), @$"{Environment.CurrentDirectory}\img\cofee.jpg")));
             ShadowAssist.SetShadowDepth(this, ShadowDepth.Depth0); // для подключения Material Design
+
             #region не прерывный показ текущего времени (внизу окна)
 
             // не прерывный показ текущего времени (внизу окна)
@@ -85,7 +86,6 @@ namespace ForExperiments
         // mouse enter
         private void DescriptTitle_MouseEnter(object sender, System.Windows.Input.MouseEventArgs e)
         {
-
             DescriptionText.Text = "Постарался собрать вопросы, которые могут попадаться на собеседованиях C# программистов, а так же дать подробные ответы.\nЕсли будут предложения и пожелания, напишите мне\ngiocatory@yandex.ru";
         }
 
@@ -148,8 +148,6 @@ namespace ForExperiments
         {
             DescriptionText.Text = "Реализация простейшего редактора для рисования.\nЕсли будут предложения и пожелания, напишите мне\ngiocatory@yandex.ru";
         }
-
-
 
         #endregion hover on list titles
     }

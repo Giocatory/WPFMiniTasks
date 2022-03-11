@@ -4,8 +4,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="clr-namespace:ForExperiments.ViewModels"
-        xmlns:mt="clr-namespace:ForExperiments.Services"
-        xmlns:sys="clr-namespace:System;assembly=mscorlib"
         mc:Ignorable="d"
         Title="{Binding Title}" WindowStartupLocation="CenterScreen" Width="740" Height="400" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto"
         FontFamily="Consolas" x:Name="MainWindow">
@@ -61,38 +59,37 @@
 
                     <Border Grid.Column="0" BorderThickness="0,0,2,0" BorderBrush="#161f56">
                         <StackPanel x:Name="DefaultItem" Grid.Column="0" MaxWidth="350" Width="350" MinWidth="200" Margin="5, 10, 0, 5" CanVerticallyScroll="True">
-                            <TextBlock x:Name="DecriptionQuestionsList" Text="1) Вопросы на собеседования:" FontSize="13" FontWeight="Bold" MouseEnter="DescriptTitle_MouseEnter" Style="{StaticResource HoverUnderlineStyle}" />
-                            <TextBlock x:Name="DescriptionQuestionOne" Text="   1.1 Общие" FontSize="12" MouseEnter="DescriptTitleOne_MouseEnter" Style="{StaticResource HoverUnderlineStyle}"/>
-                            <TextBlock x:Name="DescriptionQuestionTwo" Text="   1.2 Junior" FontSize="12" MouseEnter="DescriptTitleTwo_MouseEnter" Style="{StaticResource HoverUnderlineStyle}"/>
+                            <TextBlock x:Name="DecriptionQuestionsList" x:FieldModifier="public" Text="1) Вопросы на собеседования:" FontSize="13" FontWeight="Bold" MouseEnter="DescriptTitle_MouseEnter" Style="{StaticResource HoverUnderlineStyle}" />
+                            <TextBlock x:Name="DescriptionQuestionOne" Text="   1.1 Общие" FontSize="12" MouseEnter="DescriptTitleOne_MouseEnter" Style="{StaticResource HoverUnderlineStyle}" />
+                            <TextBlock x:Name="DescriptionQuestionTwo" Text="   1.2 Junior" FontSize="12" MouseEnter="DescriptTitleTwo_MouseEnter" Style="{StaticResource HoverUnderlineStyle}" />
                             <TextBlock x:Name="DescriptionQuestionThree" Text="   1.3 Middle" FontSize="12" MouseEnter="DescriptTitleThree_MouseEnter" Style="{StaticResource HoverUnderlineStyle}" />
                             <TextBlock x:Name="DescriptionQuestionFour" Text="   1.4 Senior" FontSize="12" MouseEnter="DescriptTitleFour_MouseEnter" Style="{StaticResource HoverUnderlineStyle}" />
-                            <TextBlock x:Name="DescriptionQuestionFive" Text="   1.5 Тесты" FontSize="12" MouseEnter="DescriptTitleFive_MouseEnter" Style="{StaticResource HoverUnderlineStyle}"/>
+                            <TextBlock x:Name="DescriptionQuestionFive" Text="   1.5 Тесты" FontSize="12" MouseEnter="DescriptTitleFive_MouseEnter" Style="{StaticResource HoverUnderlineStyle}" />
 
-                            <TextBlock x:Name="MiniProjTitle" Text="2) Мини проеты, для отработки навыков:" FontSize="13" FontWeight="Bold" MouseEnter="MiniProjTitle_MouseEnter" Style="{StaticResource HoverUnderlineStyle}"/>
+                            <TextBlock x:Name="MiniProjTitle" Text="2) Мини проеты, для отработки навыков:" FontSize="13" FontWeight="Bold" MouseEnter="MiniProjTitle_MouseEnter" Style="{StaticResource HoverUnderlineStyle}" />
                             <TextBlock x:Name="MiniProjCalculator" Text="   2.1 Калькулятор" FontSize="12" MouseEnter="MiniProjCalculator_MouseEnter" Style="{StaticResource HoverUnderlineStyle}" />
-                            <TextBlock x:Name="MiniProjNotebook" Text="   2.2 Блокнот" FontSize="12" MouseEnter="MiniProjNotebook_MouseEnter" Style="{StaticResource HoverUnderlineStyle}"/>
-                            <TextBlock x:Name="MiniProjCrossesAndZero" Text="   2.3 Крестики нолики" FontSize="12" MouseEnter="MiniProjCrossesAndZero_MouseEnter" Style="{StaticResource HoverUnderlineStyle}"/>
+                            <TextBlock x:Name="MiniProjNotebook" Text="   2.2 Блокнот" FontSize="12" MouseEnter="MiniProjNotebook_MouseEnter" Style="{StaticResource HoverUnderlineStyle}" />
+                            <TextBlock x:Name="MiniProjCrossesAndZero" Text="   2.3 Крестики нолики" FontSize="12" MouseEnter="MiniProjCrossesAndZero_MouseEnter" Style="{StaticResource HoverUnderlineStyle}" />
                             <TextBlock x:Name="MiniProjPasswordGenerate" Text="   2.4 Генератор паролей" FontSize="12" MouseEnter="MiniProjPasswordGenerate_MouseEnter" Style="{StaticResource HoverUnderlineStyle}" />
                             <TextBlock x:Name="MiniProjResumeCreator" Text="   2.5 Создатель резюме" FontSize="12" MouseEnter="MiniProjResumeCreator_MouseEnter" Style="{StaticResource HoverUnderlineStyle}" />
                             <TextBlock x:Name="MiniProjPaint" Text="   2.5 Мини Paint" FontSize="12" MouseEnter="MiniProjPaint_MouseEnter" Style="{StaticResource HoverUnderlineStyle}" />
 
-                            <TextBlock x:Name="JunAppList" Text="3) Приложения для уровня Junior" FontSize="13" FontWeight="Bold" Style="{StaticResource HoverUnderlineStyle}"/>
-                            <TextBlock x:Name="JunAppMessenger" Text="   3.1 Мессенджер (+видео связь)" FontSize="12" Style="{StaticResource HoverUnderlineStyle}"/>
-                            <TextBlock x:Name="JunAppMediaPlayer" Text="   3.2 Видео и музыкальный плеер" FontSize="12" Style="{StaticResource HoverUnderlineStyle}"/>
-                            <TextBlock x:Name="JunAppFileViewer" Text="   3.3 Просмотрщик PDF, JPG, PNG, GIF..." FontSize="12" Style="{StaticResource HoverUnderlineStyle}"/>
-                            <TextBlock x:Name="JunAppMessageSender" Text="   3.4 Рассылки на почту, мессенджеры, соц. сети" FontSize="12" Style="{StaticResource HoverUnderlineStyle}"/>
+                            <TextBlock x:Name="JunAppList" Text="3) Приложения для уровня Junior" FontSize="13" FontWeight="Bold" Style="{StaticResource HoverUnderlineStyle}" />
+                            <TextBlock x:Name="JunAppMessenger" Text="   3.1 Мессенджер (+видео связь)" FontSize="12" Style="{StaticResource HoverUnderlineStyle}" />
+                            <TextBlock x:Name="JunAppMediaPlayer" Text="   3.2 Видео и музыкальный плеер" FontSize="12" Style="{StaticResource HoverUnderlineStyle}" />
+                            <TextBlock x:Name="JunAppFileViewer" Text="   3.3 Просмотрщик PDF, JPG, PNG, GIF..." FontSize="12" Style="{StaticResource HoverUnderlineStyle}" />
+                            <TextBlock x:Name="JunAppMessageSender" Text="   3.4 Рассылки на почту, мессенджеры, соц. сети" FontSize="12" Style="{StaticResource HoverUnderlineStyle}" />
 
-                            <TextBlock x:Name="GameList" Text="4) Мини игры" FontSize="13" FontWeight="Bold" Style="{StaticResource HoverUnderlineStyle}"/>
-                            <TextBlock x:Name="GameCGL" Text="   4.1 Conway's Game of Life" FontSize="12" Style="{StaticResource HoverUnderlineStyle}"/>
-                            <TextBlock x:Name="GameRally" Text="   4.2 2D Rally" FontSize="12" Style="{StaticResource HoverUnderlineStyle}"/>
-                            <TextBlock x:Name="GameInvaders" Text="   4.3 Space Invaders" FontSize="12" Style="{StaticResource HoverUnderlineStyle}"/>
+                            <TextBlock x:Name="GameList" Text="4) Мини игры" FontSize="13" FontWeight="Bold" Style="{StaticResource HoverUnderlineStyle}" />
+                            <TextBlock x:Name="GameCGL" Text="   4.1 Conway's Game of Life" FontSize="12" Style="{StaticResource HoverUnderlineStyle}" />
+                            <TextBlock x:Name="GameRally" Text="   4.2 2D Rally" FontSize="12" Style="{StaticResource HoverUnderlineStyle}" />
+                            <TextBlock x:Name="GameInvaders" Text="   4.3 Space Invaders" FontSize="12" Style="{StaticResource HoverUnderlineStyle}" />
                         </StackPanel>
                     </Border>
 
                     <TextBlock x:Name="DescriptionText" Text="{Binding Description}" Grid.Column="1" Width="350" MaxWidth="350" MinWidth="150"  Margin="5, 10, 0, 5"
                                HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" Foreground="#f5d3a4"  FontSize="13" FontWeight="Bold"
                                TextWrapping="Wrap">
-                        
                     </TextBlock>
                 </Grid>
             </TabItem>
@@ -105,33 +102,33 @@
                         <ColumnDefinition Width="auto" />
                         <ColumnDefinition Width="auto" />
                     </Grid.ColumnDefinitions>
-                        <StackPanel x:Name="TableItem" Grid.Column="0" MaxWidth="740" Width="740" MinWidth="200" Margin="5, 10, 0, 5" CanVerticallyScroll="True" VerticalAlignment="Center" HorizontalAlignment="Center" TextBlock.TextAlignment="Center">
-                            <TextBlock x:Name="DecriptionQuestionsList_1" Text="1) Вопросы на собеседования:" FontSize="13" FontWeight="Bold" MouseEnter="DescriptTitle_MouseEnter" Style="{StaticResource HoverUnderlineStyle}" />
-                            <TextBlock x:Name="DescriptionQuestionOne_1" Text="   1.1 Общие" FontSize="12" MouseEnter="DescriptTitleOne_MouseEnter" Style="{StaticResource HoverUnderlineStyle}"/>
-                            <TextBlock x:Name="DescriptionQuestionTwo_1" Text="   1.2 Junior" FontSize="12" MouseEnter="DescriptTitleTwo_MouseEnter" Style="{StaticResource HoverUnderlineStyle}"/>
-                            <TextBlock x:Name="DescriptionQuestionThree_1" Text="   1.3 Middle" FontSize="12" MouseEnter="DescriptTitleThree_MouseEnter" Style="{StaticResource HoverUnderlineStyle}" />
-                            <TextBlock x:Name="DescriptionQuestionFour_1" Text="   1.4 Senior" FontSize="12" MouseEnter="DescriptTitleFour_MouseEnter" Style="{StaticResource HoverUnderlineStyle}" />
-                            <TextBlock x:Name="DescriptionQuestionFive_1" Text="   1.5 Тесты" FontSize="12" MouseEnter="DescriptTitleFive_MouseEnter" Style="{StaticResource HoverUnderlineStyle}"/>
+                    <StackPanel x:Name="TableItem" Grid.Column="0" MaxWidth="740" Width="740" MinWidth="200" Margin="5, 10, 0, 5" CanVerticallyScroll="True" VerticalAlignment="Center" HorizontalAlignment="Center" TextBlock.TextAlignment="Center">
+                        <TextBlock x:Name="DecriptionQuestionsList_1" Text="1) Вопросы на собеседования:" FontSize="13" FontWeight="Bold" MouseEnter="DescriptTitle_MouseEnter" Style="{StaticResource HoverUnderlineStyle}" />
+                        <TextBlock x:Name="DescriptionQuestionOne_1" Text="   1.1 Общие" FontSize="12" MouseEnter="DescriptTitleOne_MouseEnter" Style="{StaticResource HoverUnderlineStyle}" />
+                        <TextBlock x:Name="DescriptionQuestionTwo_1" Text="   1.2 Junior" FontSize="12" MouseEnter="DescriptTitleTwo_MouseEnter" Style="{StaticResource HoverUnderlineStyle}" />
+                        <TextBlock x:Name="DescriptionQuestionThree_1" Text="   1.3 Middle" FontSize="12" MouseEnter="DescriptTitleThree_MouseEnter" Style="{StaticResource HoverUnderlineStyle}" />
+                        <TextBlock x:Name="DescriptionQuestionFour_1" Text="   1.4 Senior" FontSize="12" MouseEnter="DescriptTitleFour_MouseEnter" Style="{StaticResource HoverUnderlineStyle}" />
+                        <TextBlock x:Name="DescriptionQuestionFive_1" Text="   1.5 Тесты" FontSize="12" MouseEnter="DescriptTitleFive_MouseEnter" Style="{StaticResource HoverUnderlineStyle}" />
 
-                            <TextBlock x:Name="MiniProjTitle_1" Text="2) Мини проеты, для отработки навыков:" FontSize="13" FontWeight="Bold" MouseEnter="MiniProjTitle_MouseEnter" Style="{StaticResource HoverUnderlineStyle}"/>
-                            <TextBlock x:Name="MiniProjCalculator_1" Text="   2.1 Калькулятор" FontSize="12" MouseEnter="MiniProjCalculator_MouseEnter" Style="{StaticResource HoverUnderlineStyle}" />
-                            <TextBlock x:Name="MiniProjNotebook_1" Text="   2.2 Блокнот" FontSize="12" MouseEnter="MiniProjNotebook_MouseEnter" Style="{StaticResource HoverUnderlineStyle}"/>
-                            <TextBlock x:Name="MiniProjCrossesAndZero_1" Text="   2.3 Крестики нолики" FontSize="12" MouseEnter="MiniProjCrossesAndZero_MouseEnter" Style="{StaticResource HoverUnderlineStyle}"/>
-                            <TextBlock x:Name="MiniProjPasswordGenerate_1" Text="   2.4 Генератор паролей" FontSize="12" MouseEnter="MiniProjPasswordGenerate_MouseEnter" Style="{StaticResource HoverUnderlineStyle}" />
-                            <TextBlock x:Name="MiniProjResumeCreator_1" Text="   2.5 Создатель резюме" FontSize="12" MouseEnter="MiniProjResumeCreator_MouseEnter" Style="{StaticResource HoverUnderlineStyle}" />
-                            <TextBlock x:Name="MiniProjPaint_1" Text="   2.5 Мини Paint" FontSize="12" MouseEnter="MiniProjPaint_MouseEnter" Style="{StaticResource HoverUnderlineStyle}" />
+                        <TextBlock x:Name="MiniProjTitle_1" Text="2) Мини проеты, для отработки навыков:" FontSize="13" FontWeight="Bold" MouseEnter="MiniProjTitle_MouseEnter" Style="{StaticResource HoverUnderlineStyle}" />
+                        <TextBlock x:Name="MiniProjCalculator_1" Text="   2.1 Калькулятор" FontSize="12" MouseEnter="MiniProjCalculator_MouseEnter" Style="{StaticResource HoverUnderlineStyle}" />
+                        <TextBlock x:Name="MiniProjNotebook_1" Text="   2.2 Блокнот" FontSize="12" MouseEnter="MiniProjNotebook_MouseEnter" Style="{StaticResource HoverUnderlineStyle}" />
+                        <TextBlock x:Name="MiniProjCrossesAndZero_1" Text="   2.3 Крестики нолики" FontSize="12" MouseEnter="MiniProjCrossesAndZero_MouseEnter" Style="{StaticResource HoverUnderlineStyle}" />
+                        <TextBlock x:Name="MiniProjPasswordGenerate_1" Text="   2.4 Генератор паролей" FontSize="12" MouseEnter="MiniProjPasswordGenerate_MouseEnter" Style="{StaticResource HoverUnderlineStyle}" />
+                        <TextBlock x:Name="MiniProjResumeCreator_1" Text="   2.5 Создатель резюме" FontSize="12" MouseEnter="MiniProjResumeCreator_MouseEnter" Style="{StaticResource HoverUnderlineStyle}" />
+                        <TextBlock x:Name="MiniProjPaint_1" Text="   2.5 Мини Paint" FontSize="12" MouseEnter="MiniProjPaint_MouseEnter" Style="{StaticResource HoverUnderlineStyle}" />
 
-                            <TextBlock x:Name="JunAppList_1" Text="3) Приложения для уровня Junior" FontSize="13" FontWeight="Bold" Style="{StaticResource HoverUnderlineStyle}"/>
-                            <TextBlock x:Name="JunAppMessenger_1" Text="   3.1 Мессенджер (+видео связь)" FontSize="12" Style="{StaticResource HoverUnderlineStyle}"/>
-                            <TextBlock x:Name="JunAppMediaPlayer_1" Text="   3.2 Видео и музыкальный плеер" FontSize="12" Style="{StaticResource HoverUnderlineStyle}"/>
-                            <TextBlock x:Name="JunAppFileViewer_1" Text="   3.3 Просмотрщик PDF, JPG, PNG, GIF..." FontSize="12" Style="{StaticResource HoverUnderlineStyle}"/>
-                            <TextBlock x:Name="JunAppMessageSender_1" Text="   3.4 Рассылки на почту, мессенджеры, соц. сети" FontSize="12" Style="{StaticResource HoverUnderlineStyle}"/>
+                        <TextBlock x:Name="JunAppList_1" Text="3) Приложения для уровня Junior" FontSize="13" FontWeight="Bold" Style="{StaticResource HoverUnderlineStyle}" />
+                        <TextBlock x:Name="JunAppMessenger_1" Text="   3.1 Мессенджер (+видео связь)" FontSize="12" Style="{StaticResource HoverUnderlineStyle}" />
+                        <TextBlock x:Name="JunAppMediaPlayer_1" Text="   3.2 Видео и музыкальный плеер" FontSize="12" Style="{StaticResource HoverUnderlineStyle}" />
+                        <TextBlock x:Name="JunAppFileViewer_1" Text="   3.3 Просмотрщик PDF, JPG, PNG, GIF..." FontSize="12" Style="{StaticResource HoverUnderlineStyle}" />
+                        <TextBlock x:Name="JunAppMessageSender_1" Text="   3.4 Рассылки на почту, мессенджеры, соц. сети" FontSize="12" Style="{StaticResource HoverUnderlineStyle}" />
 
-                            <TextBlock x:Name="GameList_1" Text="4) Мини игры" FontSize="13" FontWeight="Bold" Style="{StaticResource HoverUnderlineStyle}"/>
-                            <TextBlock x:Name="GameCGL_1" Text="   4.1 Conway's Game of Life" FontSize="12" Style="{StaticResource HoverUnderlineStyle}"/>
-                            <TextBlock x:Name="GameRally_1" Text="   4.2 2D Rally" FontSize="12" Style="{StaticResource HoverUnderlineStyle}"/>
-                            <TextBlock x:Name="GameInvaders_1" Text="   4.3 Space Invaders" FontSize="12" Style="{StaticResource HoverUnderlineStyle}"/>
-                        </StackPanel>
+                        <TextBlock x:Name="GameList_1" Text="4) Мини игры" FontSize="13" FontWeight="Bold" Style="{StaticResource HoverUnderlineStyle}" />
+                        <TextBlock x:Name="GameCGL_1" Text="   4.1 Conway's Game of Life" FontSize="12" Style="{StaticResource HoverUnderlineStyle}" />
+                        <TextBlock x:Name="GameRally_1" Text="   4.2 2D Rally" FontSize="12" Style="{StaticResource HoverUnderlineStyle}" />
+                        <TextBlock x:Name="GameInvaders_1" Text="   4.3 Space Invaders" FontSize="12" Style="{StaticResource HoverUnderlineStyle}" />
+                    </StackPanel>
                 </Grid>
             </TabItem>
         </TabControl>
