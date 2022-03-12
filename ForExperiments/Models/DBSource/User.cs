@@ -12,15 +12,15 @@ namespace ForExperiments.Models.DBSource
         private string telegramm;
         private string mobile;
 
-
         public int Id
         {
-            get { return id; }
+            get => id;
             set
             {
                 id = value;
             }
         }
+
         public string Login
         {
             get => login;
@@ -30,6 +30,7 @@ namespace ForExperiments.Models.DBSource
                 OnPropertyChanged("Login");
             }
         }
+
         public string Pass
         {
             get => pass;
@@ -39,6 +40,7 @@ namespace ForExperiments.Models.DBSource
                 OnPropertyChanged("Pass");
             }
         }
+
         public string Mail
         {
             get => mail;
@@ -48,6 +50,7 @@ namespace ForExperiments.Models.DBSource
                 OnPropertyChanged("Mail");
             }
         }
+
         public string Telegramm
         {
             get => telegramm;
@@ -57,6 +60,7 @@ namespace ForExperiments.Models.DBSource
                 OnPropertyChanged("Telegramm");
             }
         }
+
         public string Mobile
         {
             get => mobile;
@@ -66,12 +70,12 @@ namespace ForExperiments.Models.DBSource
                 OnPropertyChanged("Mobile");
             }
         }
+
         public event PropertyChangedEventHandler? PropertyChanged;
+
         public void OnPropertyChanged([CallerMemberName] string prop = "")
         {
-            if (PropertyChanged != null)
-                PropertyChanged(this, new PropertyChangedEventArgs(prop));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
         }
-
     }
 }

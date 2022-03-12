@@ -23,6 +23,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="App.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Data\listapps.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
