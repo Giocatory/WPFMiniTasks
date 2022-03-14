@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 
 namespace ForExperiments
 {
@@ -7,5 +8,6 @@ namespace ForExperiments
     /// </summary>
     public partial class App : Application
     {
+        internal static string connectionStrign = $"{Environment.CurrentDirectory}\\Data\\ForExperiments.db";
     }
 }
