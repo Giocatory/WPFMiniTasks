@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using ForExperiments.Infrastructure;
+using Microsoft.EntityFrameworkCore;
 
 namespace ForExperiments
 {
@@ -6,6 +7,7 @@ namespace ForExperiments
     {
         public ForExperimentsContext()
         {
+            //Database.EnsureCreated(); // гарант создания базы данных
         }
 
         public ForExperimentsContext(DbContextOptions<ForExperimentsContext> options)
@@ -21,7 +23,7 @@ namespace ForExperiments
             if (!optionsBuilder.IsConfigured)
             {
                 // #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlite("Data Source=D:\\localhost\\Giocatory\\WPFMiniTasks\\ForExperiments\\ForExperiments.db");
+                optionsBuilder.UseSqlite(SourceLite.ConnectionString);
             }
         }
 
@@ -53,6 +55,6 @@ namespace ForExperiments
             OnModelCreatingPartial(modelBuilder);
         }
 
-        private partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+        partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }
 }
