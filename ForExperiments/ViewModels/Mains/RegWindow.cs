@@ -19,6 +19,7 @@ namespace ForExperiments
         }
 
         #region Menu Items
+
         private void aboutProgram(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Программа предназначена для группировки мини приложений, созданных в процессе обучения WPF. Регистрироваться не обязательно, можно просто зайти, как гость!");
@@ -32,6 +33,7 @@ namespace ForExperiments
         #endregion Menu Items
 
         #region Tab indexes
+
         private void NextTabIndex(object sender, RoutedEventArgs e)
         {
             if (Login.Text == "" || Password.Text == "")
@@ -42,8 +44,6 @@ namespace ForExperiments
             RegProgress.Value = 100;
         }
 
-
-
         private void PrewTabIndex(object sender, RoutedEventArgs e)
         {
             LogPass.Focus();
@@ -53,6 +53,7 @@ namespace ForExperiments
         #endregion Tab indexes
 
         #region Hover in button
+
         // hover in button
         private void HoverInButton(object sender, MouseEventArgs e)
         {
@@ -89,10 +90,27 @@ namespace ForExperiments
             ButtonFinall.Foreground = Brushes.Yellow;
             ButtonFinall.Background = Brushes.Blue;
         }
+
         #endregion Hover in button
 
         private void FinallReg_Click(object sender, RoutedEventArgs e)
         {
+            using (ForExperimentsContext db = new())
+            {
+                User user = new()
+                {
+                    Login = Login.Text,
+                    Pass = Password.Text,
+                    Mail = Email.Text,
+                    Telegramm = Telegramm.Text,
+                    Mobile = Mobile.Text
+                };
+
+                db.Users.Add(user);
+                db.SaveChanges();
+            }
+            MessageBox.Show($"Регистрация завершена!\nСпасибо {Login.Text}!");
+            this.Close();
         }
     }
 }

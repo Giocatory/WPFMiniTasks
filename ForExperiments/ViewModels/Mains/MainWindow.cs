@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -18,6 +19,7 @@ namespace ForExperiments
         }
 
         #region main buttons
+
         private void signIn_Click(object sender, RoutedEventArgs e)
         {
             AppsList taskWindow = new();
@@ -25,7 +27,6 @@ namespace ForExperiments
             {
                 taskWindow.ViewModel = $"Добро пожаловать, Guest!\nВыберите что-нибудь из списка приложений!";
                 taskWindow.Show();
-                taskWindow.Owner = this;
                 taskWindow.ShowViewModel();
                 return;
             }
@@ -34,16 +35,22 @@ namespace ForExperiments
                 MessageBox.Show("Не корректный ввод логина/пароля");
                 return;
             }
-            if (login.Text.ToLower() == "admin" && password.Password.ToLower() == "admin")
+            using (ForExperimentsContext db = new())
             {
-                taskWindow.ViewModel = $"Добро пожаловать, {login.Text}!\nВыберите что-нибудь из списка приложений!";
-                taskWindow.Show();
-                taskWindow.Owner = this;
-                taskWindow.ShowViewModel();
-            }
-            else
-            {
-                MessageBox.Show("База данных еще не подключена!");
+                var users = db.Users.ToList();
+                foreach (var user in users)
+                {
+                    if (login.Text.ToLower() == user.Login.ToLower() && password.Password == user.Pass)
+                    {
+                        taskWindow.ViewModel = $"Добро пожаловать, {login.Text}!\nВыберите что-нибудь из списка приложений!";
+                        taskWindow.Show();
+                        taskWindow.ShowViewModel();
+                    }
+                    else
+                    {
+                        MessageBox.Show("К сожалению вас в базе нет ;(");
+                    }
+                }
             }
         }
 
@@ -51,10 +58,9 @@ namespace ForExperiments
         {
             RegWindow regWindow = new();
             regWindow.Show();
-            regWindow.Owner = this;
         }
-        #endregion main buttons
 
+        #endregion main buttons
 
         #region button hover animation
 
@@ -81,6 +87,7 @@ namespace ForExperiments
             registration.Background = Brushes.Blue;
             registration.Foreground = Brushes.Yellow;
         }
+
         #endregion button hover animation
     }
 }

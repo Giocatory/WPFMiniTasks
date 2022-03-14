@@ -19,13 +19,13 @@
                 <MenuItem Header="О программе" Click="aboutProgram" FontFamily="Arial" FontSize="15" Height="17"  Margin="0,-15,0,0" Background="#161f56" Foreground="#f5d3a4"></MenuItem>
             </MenuItem>
         </Menu>
-        
+
         <StatusBar DockPanel.Dock="Bottom">
             <StatusBarItem>
                 <ProgressBar x:Name="RegProgress" Width="570" Height="10" Value="50" HorizontalAlignment="Center" Margin="-5" Background="Yellow"></ProgressBar>
             </StatusBarItem>
         </StatusBar>
-        
+
         <TabControl x:Name="tabControl" Margin="-5" Background="Transparent" Width="550" BorderThickness="0">
             <TabItem x:Name="LogPass" Header="Общее" FontFamily="Arial" Height="0">
                 <Grid>
@@ -120,7 +120,7 @@
                             </Button.Style>
                         </Button>
                         <Button x:Name="ButtonFinall" Content="Завершить" Margin="5" Background="Blue" Foreground="Yellow" MouseMove="HoverInFinButton" MouseLeave="HoverOutFinButton"
-        FontWeight="Bold" FontFamily="Arial" Width="100" Height="20" Click="FinallReg_Click" >
+        FontWeight="Bold" FontFamily="Arial" Width="100" Height="20" Click="FinallReg_Click">
                             <Button.Style>
                                 <Style TargetType="Button">
                                     <Setter Property="Template">
