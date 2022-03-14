@@ -15,9 +15,10 @@ namespace ForExperiments
         public RegWindow()
         {
             InitializeComponent();
-            this.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), @$"{Environment.CurrentDirectory}\img\mainBg.jpg")));
+            this.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), @$"{Environment.CurrentDirectory}\img\cofee.jpg")));
         }
 
+        #region Menu Items
         private void aboutProgram(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Программа предназначена для группировки мини приложений, созданных в процессе обучения WPF. Регистрироваться не обязательно, можно просто зайти, как гость!");
@@ -28,6 +29,9 @@ namespace ForExperiments
             this.Close();
         }
 
+        #endregion Menu Items
+
+        #region Tab indexes
         private void NextTabIndex(object sender, RoutedEventArgs e)
         {
             if (Login.Text == "" || Password.Text == "")
@@ -38,12 +42,17 @@ namespace ForExperiments
             RegProgress.Value = 100;
         }
 
+
+
         private void PrewTabIndex(object sender, RoutedEventArgs e)
         {
             LogPass.Focus();
             RegProgress.Value = 50;
         }
 
+        #endregion Tab indexes
+
+        #region Hover in button
         // hover in button
         private void HoverInButton(object sender, MouseEventArgs e)
         {
@@ -79,6 +88,11 @@ namespace ForExperiments
         {
             ButtonFinall.Foreground = Brushes.Yellow;
             ButtonFinall.Background = Brushes.Blue;
+        }
+        #endregion Hover in button
+
+        private void FinallReg_Click(object sender, RoutedEventArgs e)
+        {
         }
     }
 }

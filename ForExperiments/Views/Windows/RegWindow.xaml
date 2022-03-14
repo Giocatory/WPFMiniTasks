@@ -6,25 +6,27 @@
         xmlns:vm="clr-namespace:ForExperiments.ViewModels"
         mc:Ignorable="d"
         xml:space="default"
-        Title="{Binding Title}" Height="200" Width="550" WindowStartupLocation="CenterScreen" FontFamily="Arial" ResizeMode="NoResize">
+        Title="{Binding Title}" Height="200" Width="555" WindowStartupLocation="CenterScreen" FontFamily="Arial" ResizeMode="NoResize">
     <Window.DataContext>
         <vm:RegWindowViewModel></vm:RegWindowViewModel>
     </Window.DataContext>
-    <DockPanel>
-        <Menu DockPanel.Dock="Top" Background="#1b78d7" BorderThickness="0" Height="20">
-            <MenuItem Header="Файл" BorderThickness="0,0,1,0" BorderBrush="DarkGray" FontFamily="Arial" Foreground="Black" Height="20">
+    <DockPanel Background="Transparent">
+        <Menu DockPanel.Dock="Top" Background="Transparent" BorderThickness="0" Height="20">
+            <MenuItem Header="Файл" FontWeight="Bold" FontFamily="Arial" Foreground="Black" Height="20">
                 <MenuItem Header="Выход" Command="{Binding CloseApplicationCommand}" FontFamily="Arial" FontSize="15" Height="17"  Margin="0,-15,0,0" Background="#161f56" Foreground="#f5d3a4" />
             </MenuItem>
-            <MenuItem Header="Помощь" BorderThickness="0,0,1,0" BorderBrush="DarkGray" FontFamily="Arial" Foreground="Black" Height="20">
+            <MenuItem Header="Помощь" FontWeight="Bold" FontFamily="Arial" Foreground="Black" Height="20">
                 <MenuItem Header="О программе" Click="aboutProgram" FontFamily="Arial" FontSize="15" Height="17"  Margin="0,-15,0,0" Background="#161f56" Foreground="#f5d3a4"></MenuItem>
             </MenuItem>
         </Menu>
+        
         <StatusBar DockPanel.Dock="Bottom">
             <StatusBarItem>
-                <ProgressBar x:Name="RegProgress" Width="544" Height="10" Value="50" HorizontalAlignment="Center" Margin="-5, 0, 0, -5" Background="Yellow"></ProgressBar>
+                <ProgressBar x:Name="RegProgress" Width="570" Height="10" Value="50" HorizontalAlignment="Center" Margin="-5" Background="Yellow"></ProgressBar>
             </StatusBarItem>
         </StatusBar>
-        <TabControl x:Name="tabControl" Margin="-5" Background="#1b78d7" Width="550">
+        
+        <TabControl x:Name="tabControl" Margin="-5" Background="Transparent" Width="550" BorderThickness="0">
             <TabItem x:Name="LogPass" Header="Общее" FontFamily="Arial" Height="0">
                 <Grid>
                     <Grid.RowDefinitions>
@@ -47,7 +49,7 @@
                         <TextBox x:Name="Password" FontSize="15" FontWeight="Bold" VerticalAlignment="Center" MinWidth="100" MaxWidth="200" Width="200" Margin="5" BorderBrush="Black" Grid.Column="1"></TextBox>
                     </StackPanel>
 
-                    <TextBlock Text="{Binding Description}" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" Grid.Column="2" MaxWidth="250" MinWidth="100" Grid.RowSpan="2" Margin="5" FontFamily="Arial" Foreground="Gold">
+                    <TextBlock FontWeight="Bold" Text="{Binding Description}" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" Grid.Column="2" MaxWidth="250" MinWidth="100" Grid.RowSpan="2" Margin="5" FontFamily="Arial" Foreground="Gold">
                     </TextBlock>
 
                     <Button x:Name="ButtonNext" Content="Продолжить" Grid.Row="2" Grid.Column="0" Margin="5" Background="Blue" Foreground="Yellow" Click="NextTabIndex" MouseMove="HoverInButton" MouseLeave="HoverOutButton"
@@ -87,15 +89,15 @@
 
                     <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.ColumnSpan="2">
                         <TextBlock Text="E-mail: " VerticalAlignment="Center" Margin="5" FontSize="15" FontWeight="Bold" Grid.Column="0" FontFamily="Arial"  Foreground="#001830"></TextBlock>
-                        <TextBox  FontSize="15" FontWeight="Bold" VerticalAlignment="Center" MinWidth="100" MaxWidth="200" Width="200" Margin="14,5,5,5" BorderBrush="Black" Grid.Column="1"></TextBox>
+                        <TextBox x:Name="Email" FontSize="15" FontWeight="Bold" VerticalAlignment="Center" MinWidth="100" MaxWidth="200" Width="200" Margin="14,5,5,5" BorderBrush="Black" Grid.Column="1"></TextBox>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.ColumnSpan="2">
                         <TextBlock Text="Telegramm: " VerticalAlignment="Center" Margin="5" FontSize="15" FontWeight="Bold" Grid.Column="0" FontFamily="Arial"  Foreground="#001830"></TextBlock>
-                        <TextBox FontSize="15" FontWeight="Bold" VerticalAlignment="Center" MinWidth="100" MaxWidth="167" Width="167" Margin="14,5,5,5" BorderBrush="Black" Grid.Column="1"></TextBox>
+                        <TextBox x:Name="Telegramm" FontSize="15" FontWeight="Bold" VerticalAlignment="Center" MinWidth="100" MaxWidth="167" Width="167" Margin="14,5,5,5" BorderBrush="Black" Grid.Column="1"></TextBox>
                     </StackPanel>
                     <StackPanel Orientation="Horizontal" Grid.Row="2" Grid.ColumnSpan="2">
                         <TextBlock Text="Тел.: " Margin="5" FontSize="15" FontWeight="Bold" VerticalAlignment="Center" Grid.Column="0" FontFamily="Arial"  Foreground="#001830"></TextBlock>
-                        <TextBox FontSize="15" FontWeight="Bold" VerticalAlignment="Center" MinWidth="100" MaxWidth="220" Width="215" Margin="14,5,5,5" BorderBrush="Black" Grid.Column="1"></TextBox>
+                        <TextBox x:Name="Mobile" FontSize="15" FontWeight="Bold" VerticalAlignment="Center" MinWidth="100" MaxWidth="220" Width="215" Margin="14,5,5,5" BorderBrush="Black" Grid.Column="1"></TextBox>
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.ColumnSpan="3" HorizontalAlignment="Center">
@@ -118,7 +120,7 @@
                             </Button.Style>
                         </Button>
                         <Button x:Name="ButtonFinall" Content="Завершить" Margin="5" Background="Blue" Foreground="Yellow" MouseMove="HoverInFinButton" MouseLeave="HoverOutFinButton"
-        FontWeight="Bold" FontFamily="Arial" Width="100" Height="20">
+        FontWeight="Bold" FontFamily="Arial" Width="100" Height="20" Click="FinallReg_Click" >
                             <Button.Style>
                                 <Style TargetType="Button">
                                     <Setter Property="Template">
@@ -137,7 +139,7 @@
                         </Button>
                     </StackPanel>
 
-                    <TextBlock Text="{Binding DescriptionFinall}" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" Grid.Column="2" Grid.RowSpan="3" Foreground="Gold" Margin="0,5,0,0"></TextBlock>
+                    <TextBlock FontWeight="Bold" Text="{Binding DescriptionFinall}" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap" Grid.Column="2" Grid.RowSpan="3" Foreground="Gold" Margin="0,5,0,0"></TextBlock>
                 </Grid>
             </TabItem>
         </TabControl>
