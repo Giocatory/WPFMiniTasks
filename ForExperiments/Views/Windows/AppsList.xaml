@@ -60,7 +60,11 @@
                     <Border Grid.Column="0" BorderThickness="0,0,2,0" BorderBrush="#161f56">
                         <StackPanel x:Name="DefaultItem" Grid.Column="0" MaxWidth="350" Width="350" MinWidth="200" Margin="5, 10, 0, 5" CanVerticallyScroll="True">
                             <TextBlock x:Name="DecriptionQuestionsList" x:FieldModifier="public" Text="1) Вопросы на собеседования:" FontSize="13" FontWeight="Bold" MouseEnter="DescriptTitle_MouseEnter" Style="{StaticResource HoverUnderlineStyle}" />
-                            <TextBlock x:Name="DescriptionQuestionOne" Text="   1.1 Общие" FontSize="12" MouseEnter="DescriptTitleOne_MouseEnter" Style="{StaticResource HoverUnderlineStyle}" />
+                            <TextBlock x:Name="DescriptionQuestionOne" Text="   1.1 Общие" FontSize="12" MouseEnter="DescriptTitleOne_MouseEnter" Style="{StaticResource HoverUnderlineStyle}">
+                                <TextBlock.InputBindings>
+                                    <MouseBinding MouseAction="LeftClick" Command="{Binding OpenGeneralWindowCommand}"/>
+                                </TextBlock.InputBindings>
+                            </TextBlock>
                             <TextBlock x:Name="DescriptionQuestionTwo" Text="   1.2 Junior" FontSize="12" MouseEnter="DescriptTitleTwo_MouseEnter" Style="{StaticResource HoverUnderlineStyle}" />
                             <TextBlock x:Name="DescriptionQuestionThree" Text="   1.3 Middle" FontSize="12" MouseEnter="DescriptTitleThree_MouseEnter" Style="{StaticResource HoverUnderlineStyle}" />
                             <TextBlock x:Name="DescriptionQuestionFour" Text="   1.4 Senior" FontSize="12" MouseEnter="DescriptTitleFour_MouseEnter" Style="{StaticResource HoverUnderlineStyle}" />

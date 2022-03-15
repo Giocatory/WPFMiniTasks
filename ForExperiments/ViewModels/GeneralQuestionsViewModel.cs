@@ -1,12 +1,11 @@
 ﻿using ForExperiments.Infrastructure.Commands;
 using ForExperiments.ViewModels.Base;
-using ForExperiments.Views.Questions;
 using System.Windows;
 using System.Windows.Input;
 
 namespace ForExperiments.ViewModels
 {
-    internal class AppListWindowViewModel : ViewModel
+    internal class GeneralQuestionsViewModel : ViewModel
     {
         #region Заголовок Окна
 
@@ -22,7 +21,7 @@ namespace ForExperiments.ViewModels
 
         #region Команды
 
-        // 1
+        // 1 CloseApplicationCommand
         public ICommand CloseApplicationCommand { get; }
 
         private void OnCloseApplicationCommandExecuted(object p)
@@ -32,22 +31,14 @@ namespace ForExperiments.ViewModels
 
         private bool CanCloseApplicationCommandExecute(object p) => true;
 
-        // 2 OpenGeneralWindowCommand
-        public ICommand OpenGeneralWindowCommand { get; }
-        private void OnOpenGeneralWindowCommand(object p)
-        {
-            GeneralQuestions gq = new();
-            gq.Show();
-        }
-        private bool CanOpenGeneralWindowCommandExecute(object p) => true;
         #endregion Команды
 
-        public AppListWindowViewModel()
+        public GeneralQuestionsViewModel()
         {
             #region Commands
 
             CloseApplicationCommand = new LamdaCommand(OnCloseApplicationCommandExecuted, CanCloseApplicationCommandExecute);
-            OpenGeneralWindowCommand = new LamdaCommand(OnOpenGeneralWindowCommand, CanOpenGeneralWindowCommandExecute);
+
 
             #endregion Commands
         }
