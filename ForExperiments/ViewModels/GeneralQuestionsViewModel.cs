@@ -39,7 +39,6 @@ namespace ForExperiments.ViewModels
 
             CloseApplicationCommand = new LamdaCommand(OnCloseApplicationCommandExecuted, CanCloseApplicationCommandExecute);
 
-
             #endregion Commands
         }
     }

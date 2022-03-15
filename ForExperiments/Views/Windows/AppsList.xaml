@@ -62,7 +62,7 @@
                             <TextBlock x:Name="DecriptionQuestionsList" x:FieldModifier="public" Text="1) Вопросы на собеседования:" FontSize="13" FontWeight="Bold" MouseEnter="DescriptTitle_MouseEnter" Style="{StaticResource HoverUnderlineStyle}" />
                             <TextBlock x:Name="DescriptionQuestionOne" Text="   1.1 Общие" FontSize="12" MouseEnter="DescriptTitleOne_MouseEnter" Style="{StaticResource HoverUnderlineStyle}">
                                 <TextBlock.InputBindings>
-                                    <MouseBinding MouseAction="LeftClick" Command="{Binding OpenGeneralWindowCommand}"/>
+                                    <MouseBinding MouseAction="LeftClick" Command="{Binding OpenGeneralWindowCommand}" />
                                 </TextBlock.InputBindings>
                             </TextBlock>
                             <TextBlock x:Name="DescriptionQuestionTwo" Text="   1.2 Junior" FontSize="12" MouseEnter="DescriptTitleTwo_MouseEnter" Style="{StaticResource HoverUnderlineStyle}" />

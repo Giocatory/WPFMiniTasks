@@ -34,12 +34,15 @@ namespace ForExperiments.ViewModels
 
         // 2 OpenGeneralWindowCommand
         public ICommand OpenGeneralWindowCommand { get; }
+
         private void OnOpenGeneralWindowCommand(object p)
         {
             GeneralQuestions gq = new();
             gq.Show();
         }
+
         private bool CanOpenGeneralWindowCommandExecute(object p) => true;
+
         #endregion Команды
 
         public AppListWindowViewModel()
