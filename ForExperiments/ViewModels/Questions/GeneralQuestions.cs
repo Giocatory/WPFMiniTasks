@@ -1,4 +1,8 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 
 namespace ForExperiments.Views.Questions
 {
@@ -10,6 +14,24 @@ namespace ForExperiments.Views.Questions
         public GeneralQuestions()
         {
             InitializeComponent();
+            this.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), @$"{Environment.CurrentDirectory}\img\cofee.jpg")));
+            backTab.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), @$"{Environment.CurrentDirectory}\img\back.png")));
+            backTabtwo.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), @$"{Environment.CurrentDirectory}\img\back.png")));
         }
+
+        #region Tabs items
+        void BackTwoClick(object sender, RoutedEventArgs e)
+        {
+            MainTab.Focus();
+        }
+        void FocusListTab(object sender, RoutedEventArgs e)
+        {
+            ListTab.Focus();
+        }
+        void FocusAddTab(object sender, RoutedEventArgs e)
+        {
+            AddTab.Focus();
+        }
+        #endregion Tabs items
     }
 }

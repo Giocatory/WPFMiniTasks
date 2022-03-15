@@ -20,9 +20,9 @@ namespace ForExperiments.ViewModels
 
         #endregion Заголовок Окна
 
-        #region Команды
+        #region CloseApplicationCommand
 
-        // 1
+        // 1 CloseApplicationCommand
         public ICommand CloseApplicationCommand { get; }
 
         private void OnCloseApplicationCommandExecuted(object p)
@@ -32,6 +32,9 @@ namespace ForExperiments.ViewModels
 
         private bool CanCloseApplicationCommandExecute(object p) => true;
 
+        #endregion CloseApplicationCommand
+
+        #region OpenGeneralWindowCommand
         // 2 OpenGeneralWindowCommand
         public ICommand OpenGeneralWindowCommand { get; }
 
@@ -42,8 +45,8 @@ namespace ForExperiments.ViewModels
         }
 
         private bool CanOpenGeneralWindowCommandExecute(object p) => true;
+        #endregion OpenGeneralWindowCommand
 
-        #endregion Команды
 
         public AppListWindowViewModel()
         {

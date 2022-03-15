@@ -9,6 +9,5 @@ namespace ForExperiments
     public partial class App : Application
     {
         internal static string connectionStrign = $"{Environment.CurrentDirectory}\\Data\\ForExperiments.db";
-        internal static string GeneralQuestions = $"{Environment.CurrentDirectory}\\Views\\Questions\\GeneralQuestions";
     }
 }

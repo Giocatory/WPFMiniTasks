@@ -4,6 +4,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
+using Brushes = System.Windows.Media.Brushes;
 
 namespace ForExperiments
 {
