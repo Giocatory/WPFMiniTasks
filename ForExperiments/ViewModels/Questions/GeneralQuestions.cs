@@ -18,7 +18,6 @@ namespace ForExperiments.Views.Questions
             backTab.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), @$"{Environment.CurrentDirectory}\img\back.png")));
             backTabtwo.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), @$"{Environment.CurrentDirectory}\img\back.png")));
         }
-
         #region Tabs items
 
         private void BackTwoClick(object sender, RoutedEventArgs e)
