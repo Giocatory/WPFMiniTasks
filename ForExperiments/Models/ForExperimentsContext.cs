@@ -1,4 +1,5 @@
 ﻿using ForExperiments.Infrastructure;
+using ForExperiments.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace ForExperiments
@@ -17,6 +18,9 @@ namespace ForExperiments
 
         public virtual DbSet<Content> Contents { get; set; } = null!;
         public virtual DbSet<User> Users { get; set; } = null!;
+        public virtual DbSet<JuniorQuestion> JuniorQuestions { get; set; } = null!;
+        public virtual DbSet<MiddleQuestion> MiddleQuestions { get; set; } = null!;
+        public virtual DbSet<SeniorQuestion> SeniorQuestions { get; set; } = null!;
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -28,6 +32,21 @@ namespace ForExperiments
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<JuniorQuestion>(entity =>
+            {
+                entity.Property(e => e.Id).ValueGeneratedNever();
+            });
+
+            modelBuilder.Entity<MiddleQuestion>(entity =>
+            {
+                entity.Property(e => e.Id).ValueGeneratedNever();
+            });
+
+            modelBuilder.Entity<SeniorQuestion>(entity =>
+            {
+                entity.Property(e => e.Id).ValueGeneratedNever();
+            });
+
             modelBuilder.Entity<Content>(entity =>
             {
                 entity.Property(e => e.Id).ValueGeneratedNever();
