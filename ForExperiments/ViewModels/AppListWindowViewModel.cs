@@ -35,6 +35,7 @@ namespace ForExperiments.ViewModels
         #endregion CloseApplicationCommand
 
         #region OpenGeneralWindowCommand
+
         // 2 OpenGeneralWindowCommand
         public ICommand OpenGeneralWindowCommand { get; }
 
@@ -45,8 +46,8 @@ namespace ForExperiments.ViewModels
         }
 
         private bool CanOpenGeneralWindowCommandExecute(object p) => true;
-        #endregion OpenGeneralWindowCommand
 
+        #endregion OpenGeneralWindowCommand
 
         public AppListWindowViewModel()
         {

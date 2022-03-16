@@ -20,18 +20,22 @@ namespace ForExperiments.Views.Questions
         }
 
         #region Tabs items
-        void BackTwoClick(object sender, RoutedEventArgs e)
+
+        private void BackTwoClick(object sender, RoutedEventArgs e)
         {
             MainTab.Focus();
         }
-        void FocusListTab(object sender, RoutedEventArgs e)
+
+        private void FocusListTab(object sender, RoutedEventArgs e)
         {
             ListTab.Focus();
         }
-        void FocusAddTab(object sender, RoutedEventArgs e)
+
+        private void FocusAddTab(object sender, RoutedEventArgs e)
         {
             AddTab.Focus();
         }
+
         #endregion Tabs items
     }
 }

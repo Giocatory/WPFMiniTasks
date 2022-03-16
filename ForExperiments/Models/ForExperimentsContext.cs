@@ -54,6 +54,6 @@ namespace ForExperiments
             OnModelCreatingPartial(modelBuilder);
         }
 
-        partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
+        private partial void OnModelCreatingPartial(ModelBuilder modelBuilder);
     }
 }
