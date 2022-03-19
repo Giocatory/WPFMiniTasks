@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="clr-namespace:ForExperiments.ViewModels"
         mc:Ignorable="d"
-        Title="{Binding Title}" WindowStartupLocation="CenterScreen" Width="740" Height="400" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto"
+        Title="{Binding Title}" WindowStartupLocation="CenterScreen" Width="740" Height="400" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible"
         FontFamily="Consolas" x:Name="MainWindow">
 
     <Window.DataContext>

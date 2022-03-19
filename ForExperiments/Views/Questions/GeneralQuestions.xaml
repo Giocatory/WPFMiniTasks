@@ -5,11 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="clr-namespace:ForExperiments.ViewModels"
         mc:Ignorable="d"
-        Title="{Binding Title}" WindowState="Maximized" Width="1000" Height="600"
-        ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Auto" SelectiveScrollingGrid.SelectiveScrollingOrientation="Vertical" ScrollViewer.IsDeferredScrollingEnabled="True">
+        Title="{Binding Title}" WindowState="Maximized" Width="1000" Height="650" FontFamily="Verdana"
+        ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Visible" SelectiveScrollingGrid.SelectiveScrollingOrientation="Vertical" ScrollViewer.IsDeferredScrollingEnabled="True">
     <Window.DataContext>
         <vm:GeneralQuestionsViewModel />
     </Window.DataContext>
+
     <TabControl BorderThickness="0" Background="Transparent">
         <TabItem Header="Main" x:Name="MainTab" Width="0" Height="0" BorderThickness="0" Background="Transparent">
             <Grid>
@@ -36,7 +37,54 @@
             <Button x:Name="backTab" Click="BackTwoClick" Width="50" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Cursor="Hand"></Button>
         </TabItem>
         <TabItem Header="AddToDB" x:Name="AddTab" Width="0" Height="0" BorderThickness="0" Background="Transparent">
-            <Button x:Name="backTabtwo" Click="BackTwoClick" Width="50" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Cursor="Hand"></Button>
+            <Grid Background="LightBlue">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/> <!-- Go bak img -->
+                    <RowDefinition Height="auto"/> <!-- Theme -->
+                    <RowDefinition Height="auto"/> <!-- Content -->
+                    <RowDefinition Height="auto"/> <!-- Send Buttons -->
+                </Grid.RowDefinitions>
+
+                <Button x:Name="backTabtwo" Click="BackTwoClick"
+                        Grid.Row="0"
+                        Width="50" Height="50" 
+                        HorizontalAlignment="Left" VerticalAlignment="Top" 
+                        Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Cursor="Hand">
+                </Button>
+
+                <StackPanel Orientation="Vertical" Margin="0, 10, 0, 0" Grid.Row="1">
+                    <TextBlock Text="Введите вопрос: *" 
+                               FontSize="30" FontWeight="Bold" FontFamily="Verdana"
+                               Margin="15, 5, 5, 5">
+                    </TextBlock>
+                    <TextBox Height="100"
+                             Margin="10, 0, 10, 0" Opacity="0.5"
+                             BorderThickness="1" BorderBrush="Blue"
+                             Background="AntiqueWhite" FontSize="25" FontFamily="Consolas"
+                             TextWrapping="Wrap" ScrollViewer.IsDeferredScrollingEnabled="True" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible">
+                    </TextBox>
+                </StackPanel>
+
+                <StackPanel Orientation="Vertical" Margin="0, 10, 0, 0" Grid.Row="2">
+                    <TextBlock Text="Введите полный ответ: *" 
+                               FontSize="30" FontWeight="Bold" FontFamily="Verdana"
+                               Margin="15, 5, 5, 5">
+                    </TextBlock>
+                    <TextBox Height="300" MinHeight="100" MaxHeight="300"
+                             Margin="10, 0, 10, 10" Opacity="0.5"
+                             BorderThickness="1" BorderBrush="Blue"
+                             Background="AntiqueWhite" FontSize="25" FontFamily="Consolas"
+                             TextWrapping="Wrap" ScrollViewer.IsDeferredScrollingEnabled="True" HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Visible">
+                    </TextBox>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Grid.Row="3" HorizontalAlignment="Center">
+                    <Button Content="Записать" Margin="0, 10, 10, 0" FontSize="20" Width="250">
+                    </Button>
+                    <Button Content="Очистить форму" Margin="10, 10, 0, 0" FontSize="20" Width="250">
+                    </Button>
+                </StackPanel>
+            </Grid>
         </TabItem>
     </TabControl>
 </Window>
