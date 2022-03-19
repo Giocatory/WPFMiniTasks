@@ -20,6 +20,7 @@ namespace ForExperiments.Views.Questions
             backTab.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), @$"{Environment.CurrentDirectory}\img\back.png")));
             backTabtwo.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), @$"{Environment.CurrentDirectory}\img\back.png")));
         }
+
         #region Tabs items
 
         private void BackTwoClick(object sender, RoutedEventArgs e)
@@ -37,8 +38,13 @@ namespace ForExperiments.Views.Questions
                 GeneralQuestionsList.Contents.Add(new List<string> { i.Question, i.Answer });
             }
 
-            QuestionOnDB.Text = GeneralQuestionsList.Contents[0][0];
-            AnswerOnDB.Text = GeneralQuestionsList.Contents[0][1];
+            for (int i = 0; i < GeneralQuestionsList.Contents.Count; i++)
+            {
+                DBTableContents.Text += $"{i + 1})\n" +
+                    $"{GeneralQuestionsList.Contents[i][0]}\n" +
+                    $"Ответ:\n" +
+                    $"{GeneralQuestionsList.Contents[i][1]}\n\n";
+            }
         }
 
         private void FocusAddTab(object sender, RoutedEventArgs e)
@@ -73,6 +79,7 @@ namespace ForExperiments.Views.Questions
             QuestionInput.Text = "";
             AnswerInput.Text = "";
         }
+
         #endregion AddTab Item buttons
     }
 }

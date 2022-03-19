@@ -14,6 +14,7 @@ namespace ForExperiments.ViewModels
 
         /// <summary> Заголовок Окна </summary>
         public string Title { get => _Title; set => Set(ref _Title, value); }
+
         public string Description { get => _Description; set => Set(ref _Description, value); }
 
         #endregion Заголовок Окна
