@@ -37,7 +37,23 @@
         
         <!-- TabItem = View all questions/answers -->
         <TabItem Header="List" x:Name="ListTab" Cursor="Hand"  Width="0" Height="0" BorderThickness="0" Background="Transparent">
-            <Button x:Name="backTab" Click="BackTwoClick" Width="50" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Cursor="Hand"></Button>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="70*"/>
+                    <ColumnDefinition Width="30*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="20*"/>
+                    <RowDefinition Height="40*"/>
+                </Grid.RowDefinitions>
+                <Button Grid.Row="0" Grid.Column="0" x:Name="backTab" Click="BackTwoClick" Width="50" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Cursor="Hand"></Button>
+
+                <TextBlock x:Name="QuestionOnDB" Grid.Row="1" Grid.Column="0"></TextBlock>
+                <TextBlock x:Name="AnswerOnDB" Grid.Row="2" Grid.Column="0"></TextBlock>
+
+                
+            </Grid>
         </TabItem>
         
         <!--TabItem = Add to DB -->        

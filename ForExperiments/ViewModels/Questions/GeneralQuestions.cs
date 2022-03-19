@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ForExperiments.Data;
+using System;
+using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -28,6 +30,15 @@ namespace ForExperiments.Views.Questions
         private void FocusListTab(object sender, RoutedEventArgs e)
         {
             ListTab.Focus();
+
+            ForExperimentsContext db = new();
+            foreach (var i in db.Contents)
+            {
+                GeneralQuestionsList.Contents.Add(new List<string> { i.Question, i.Answer });
+            }
+
+            QuestionOnDB.Text = GeneralQuestionsList.Contents[0][0];
+            AnswerOnDB.Text = GeneralQuestionsList.Contents[0][1];
         }
 
         private void FocusAddTab(object sender, RoutedEventArgs e)
