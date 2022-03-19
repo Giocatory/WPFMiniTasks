@@ -16,7 +16,8 @@ namespace ForExperiments.Views.Questions
         public GeneralQuestions()
         {
             InitializeComponent();
-            this.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), @$"{Environment.CurrentDirectory}\img\cofee.jpg")));
+            this.UseLayoutRounding = true;
+            this.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), @$"{Environment.CurrentDirectory}\img\gray.png")));
             backTab.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), @$"{Environment.CurrentDirectory}\img\back.png")));
             backTabtwo.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), @$"{Environment.CurrentDirectory}\img\back.png")));
         }
@@ -25,13 +26,14 @@ namespace ForExperiments.Views.Questions
 
         private void BackTwoClick(object sender, RoutedEventArgs e)
         {
+            GeneralQuestionsList.Contents.Clear();
             MainTab.Focus();
         }
 
         private void FocusListTab(object sender, RoutedEventArgs e)
         {
+            if (GeneralQuestionsList.Contents.Count != 0) GeneralQuestionsList.Contents.Clear();
             ListTab.Focus();
-
             ForExperimentsContext db = new();
             foreach (var i in db.Contents)
             {
@@ -40,10 +42,9 @@ namespace ForExperiments.Views.Questions
 
             for (int i = 0; i < GeneralQuestionsList.Contents.Count; i++)
             {
-                DBTableContents.Text += $"{i + 1})\n" +
-                    $"{GeneralQuestionsList.Contents[i][0]}\n" +
-                    $"Ответ:\n" +
-                    $"{GeneralQuestionsList.Contents[i][1]}\n\n";
+                DBTableContents.Text += $"{i + 1}) {GeneralQuestionsList.Contents[i][0]}\n" +
+                                        $"    ###   Ответ:   ###\n" +
+                                        $"{GeneralQuestionsList.Contents[i][1]}\n\n";
             }
         }
 
