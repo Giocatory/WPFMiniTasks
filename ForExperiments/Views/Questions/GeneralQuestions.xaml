@@ -40,14 +40,14 @@
             <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition Height="auto" />
-                    <RowDefinition/>
+                    <RowDefinition />
                 </Grid.RowDefinitions>
 
                 <Button Grid.Row="0" x:Name="backTab" Click="BackTwoClick" Width="50" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Cursor="Hand"></Button>
 
-                <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Hidden"
+                <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Hidden"
                               CanContentScroll="True" x:Name="ScrollView">
-                    <TextBlock x:Name="DBTableContents" Grid.Row="1" Margin="20, 5, 20, 20"
+                    <TextBlock x:Name="DBTableContents" Grid.Row="1" Margin="20, 5, 38, 20"
                            FontSize="18" TextWrapping="Wrap" MinHeight="500" MaxHeight="900">
                     </TextBlock>
                 </ScrollViewer>

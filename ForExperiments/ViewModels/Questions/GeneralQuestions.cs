@@ -26,13 +26,14 @@ namespace ForExperiments.Views.Questions
 
         private void BackTwoClick(object sender, RoutedEventArgs e)
         {
-            GeneralQuestionsList.Contents.Clear();
             MainTab.Focus();
         }
 
         private void FocusListTab(object sender, RoutedEventArgs e)
         {
-            if (GeneralQuestionsList.Contents.Count != 0) GeneralQuestionsList.Contents.Clear();
+            GeneralQuestionsList.ClearContents();
+            DBTableContents.Text = "";
+
             ListTab.Focus();
             ForExperimentsContext db = new();
             foreach (var i in db.Contents)

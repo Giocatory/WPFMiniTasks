@@ -5,5 +5,10 @@ namespace ForExperiments.Data
     internal static class GeneralQuestionsList
     {
         public static List<List<string>> Contents = new();
+
+        public static void ClearContents()
+        {
+            Contents.Clear();
+        }
     }
 }
