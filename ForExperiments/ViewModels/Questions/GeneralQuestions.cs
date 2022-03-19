@@ -36,5 +36,32 @@ namespace ForExperiments.Views.Questions
         }
 
         #endregion Tabs items
+
+        #region AddTab Item buttons
+
+        private void ClearFormInputs(object sender, RoutedEventArgs e)
+        {
+            QuestionInput.Text = "";
+            AnswerInput.Text = "";
+        }
+
+        private void MyAddInputsToDB_Click(object sender, RoutedEventArgs e)
+        {
+            using (ForExperimentsContext dbContents = new())
+            {
+                Content conntent = new()
+                {
+                    Question = QuestionInput.Text,
+                    Answer = AnswerInput.Text
+                };
+
+                dbContents.Contents.Add(conntent);
+                dbContents.SaveChanges();
+            }
+            MessageBox.Show($"Данные записаны...");
+            QuestionInput.Text = "";
+            AnswerInput.Text = "";
+        }
+        #endregion AddTab Item buttons
     }
 }
