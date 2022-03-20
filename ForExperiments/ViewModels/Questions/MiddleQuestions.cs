@@ -10,11 +10,11 @@ using System.Windows.Navigation;
 namespace ForExperiments.Views.Questions
 {
     /// <summary>
-    /// Логика взаимодействия для JuniorQuestions.xaml
+    /// Логика взаимодействия для MiddleQuestions.xaml
     /// </summary>
-    public partial class JuniorQuestions : Window
+    public partial class MiddleQuestions : Window
     {
-        public JuniorQuestions()
+        public MiddleQuestions()
         {
             InitializeComponent();
             this.UseLayoutRounding = true;
@@ -32,21 +32,21 @@ namespace ForExperiments.Views.Questions
 
         private void FocusListTab(object sender, RoutedEventArgs e)
         {
-            GeneralQuestionsList.ClearJuniorContent();
+            GeneralQuestionsList.ClearMiddleContent();
             DBTableContents.Text = "";
 
             ListTab.Focus();
             ForExperimentsContext db = new();
-            foreach (var i in db.JuniorQuestions)
+            foreach (var i in db.MiddleQuestions)
             {
-                GeneralQuestionsList.JuniorContent.Add(new List<string> { i.Question, i.Answer });
+                GeneralQuestionsList.MiddleContent.Add(new List<string> { i.Question, i.Answer });
             }
 
-            for (int i = 0; i < GeneralQuestionsList.JuniorContent.Count; i++)
+            for (int i = 0; i < GeneralQuestionsList.MiddleContent.Count; i++)
             {
-                DBTableContents.Text += $"{i + 1}) {GeneralQuestionsList.JuniorContent[i][0]}\n" +
+                DBTableContents.Text += $"{i + 1}) {GeneralQuestionsList.MiddleContent[i][0]}\n" +
                                         $"    ###   Ответ:   ###\n" +
-                                        $"{GeneralQuestionsList.JuniorContent[i][1]}\n\n";
+                                        $"{GeneralQuestionsList.MiddleContent[i][1]}\n\n";
             }
         }
 
@@ -69,13 +69,13 @@ namespace ForExperiments.Views.Questions
         {
             using (ForExperimentsContext dbContents = new())
             {
-                JuniorQuestion juniorQuestion = new()
+                MiddleQuestion middleQuestion = new()
                 {
                     Question = QuestionInput.Text,
                     Answer = AnswerInput.Text
                 };
 
-                dbContents.JuniorQuestions.Add(juniorQuestion);
+                dbContents.MiddleQuestions.Add(middleQuestion);
                 dbContents.SaveChanges();
             }
             MessageBox.Show($"Данные записаны...");
