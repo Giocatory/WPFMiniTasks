@@ -17,6 +17,9 @@ namespace ForExperiments.Views.Questions
         public MiddleQuestions()
         {
             InitializeComponent();
+
+            this.DataContext = new ViewModels.MiddleQuestionsViewModel();
+
             this.UseLayoutRounding = true;
             this.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), @$"{Environment.CurrentDirectory}\img\gray.png")));
             backTab.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), @$"{Environment.CurrentDirectory}\img\back.png")));

@@ -8,9 +8,7 @@
         Title="{Binding Title}" WindowState="Maximized" Width="1000" Height="650" FontFamily="Verdana"
         ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Visible"
         SelectiveScrollingGrid.SelectiveScrollingOrientation="Vertical" ScrollViewer.IsDeferredScrollingEnabled="True">
-    <Window.DataContext>
-        <vm:JuniorQuestionsViewModel />
-    </Window.DataContext>
+
     <Grid>
         <TabControl BorderThickness="0" Background="Transparent">
             <!-- TabItem = Main -->

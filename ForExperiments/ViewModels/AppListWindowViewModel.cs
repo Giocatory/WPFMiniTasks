@@ -47,6 +47,10 @@ namespace ForExperiments.ViewModels
 
         private bool CanOpenGeneralWindowCommandExecute(object p) => true;
 
+        #endregion OpenGeneralWindowCommand
+
+        #region OpenJuniorQuestionsWindowCommand
+
         // 3 OpenJuniorQuestionsWindowCommand
         public ICommand OpenJuniorQuestionsWindowCommand { get; }
 
@@ -57,6 +61,10 @@ namespace ForExperiments.ViewModels
         }
 
         private bool CanOpenJuniorQuestionsWindowCommandExecute(object p) => true;
+
+        #endregion OpenJuniorQuestionsWindowCommand
+
+        #region OpenMiddleQuestionsWindowCommand
 
         // 4 OpenMiddleQuestionsWindowCommand
         public ICommand OpenMiddleQuestionsWindowCommand { get; }
@@ -69,6 +77,10 @@ namespace ForExperiments.ViewModels
 
         private bool CanOpenMiddleQuestionsWindowCommandExecute(object parameter) => true;
 
+        #endregion OpenMiddleQuestionsWindowCommand
+
+        #region OpenSeniorQuestionsWindowCommand
+
         // 5 OpenSeniorQuestionsWindowCommand
         public ICommand OpenSeniorQuestionsWindowCommand { get; }
 
@@ -80,7 +92,19 @@ namespace ForExperiments.ViewModels
 
         private bool CanOpenSeniorQuestionsWindowCommandExecute(object parameter) => true;
 
-        #endregion OpenGeneralWindowCommand
+        #endregion OpenSeniorQuestionsWindowCommand
+
+        #region OpenTestingWindowCommand
+
+        public ICommand OpenTestingWindowCommand { get; }
+        private void OnOpenTestingWindowCommand(object parameter)
+        {
+            Testing testing = new();
+            testing.Show();
+        }
+        private bool CanOpenTestingWindowCommandExecute(object parameter) => true;
+
+        #endregion OpenTestingWindowCommand
 
         public AppListWindowViewModel()
         {
@@ -91,6 +115,7 @@ namespace ForExperiments.ViewModels
             OpenJuniorQuestionsWindowCommand = new LamdaCommand(OnOpenJuniorQuestionsWindowCommand, CanOpenJuniorQuestionsWindowCommandExecute);
             OpenMiddleQuestionsWindowCommand = new LamdaCommand(OnOpenMiddleQuestionsWindowCommand, CanOpenMiddleQuestionsWindowCommandExecute);
             OpenSeniorQuestionsWindowCommand = new LamdaCommand(OnOpenSeniorQuestionsWindowCommand, CanOpenSeniorQuestionsWindowCommandExecute);
+            OpenTestingWindowCommand = new LamdaCommand(OnOpenTestingWindowCommand, CanOpenTestingWindowCommandExecute);
 
             #endregion Commands
         }

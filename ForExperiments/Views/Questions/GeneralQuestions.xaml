@@ -6,10 +6,8 @@
         xmlns:vm="clr-namespace:ForExperiments.ViewModels"
         mc:Ignorable="d"
         Title="{Binding Title}" WindowState="Maximized" Width="1000" Height="650" FontFamily="Verdana"
-        ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Visible" SelectiveScrollingGrid.SelectiveScrollingOrientation="Vertical" ScrollViewer.IsDeferredScrollingEnabled="True">
-    <Window.DataContext>
-        <vm:GeneralQuestionsViewModel />
-    </Window.DataContext>
+        ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Visible" 
+        SelectiveScrollingGrid.SelectiveScrollingOrientation="Vertical" ScrollViewer.IsDeferredScrollingEnabled="True">
 
     <TabControl BorderThickness="0" Background="Transparent">
         <!-- TabItem = Main -->

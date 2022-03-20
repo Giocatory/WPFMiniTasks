@@ -33,6 +33,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="ViewModels\TestingWindowViewModel.cs">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="Data\ForExperiments.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

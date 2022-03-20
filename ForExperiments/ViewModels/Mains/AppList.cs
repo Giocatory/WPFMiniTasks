@@ -15,6 +15,9 @@ namespace ForExperiments
         public AppsList()
         {
             InitializeComponent();
+
+            this.DataContext = new ForExperiments.ViewModels.AppListWindowViewModel();
+
             this.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), @$"{Environment.CurrentDirectory}\img\cofee.jpg")));
 
             ShadowAssist.SetShadowDepth(this, ShadowDepth.Depth0); // для подключения Material Design
