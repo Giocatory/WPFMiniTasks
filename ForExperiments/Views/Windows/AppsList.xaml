@@ -75,7 +75,11 @@
                                     <MouseBinding MouseAction="LeftClick" Command="{Binding OpenMiddleQuestionsWindowCommand}"/>
                                 </TextBlock.InputBindings>
                             </TextBlock>
-                            <TextBlock x:Name="DescriptionQuestionFour" Text="   1.4 Senior" FontSize="12" MouseEnter="DescriptTitleFour_MouseEnter" Style="{StaticResource HoverUnderlineStyle}" />
+                            <TextBlock x:Name="DescriptionQuestionFour" Text="   1.4 Senior" FontSize="12" MouseEnter="DescriptTitleFour_MouseEnter" Style="{StaticResource HoverUnderlineStyle}">
+                                <TextBlock.InputBindings>
+                                    <MouseBinding MouseAction="LeftClick" Command="{Binding OpenSeniorQuestionsWindowCommand}"/>
+                                </TextBlock.InputBindings>
+                            </TextBlock>
                             <TextBlock x:Name="DescriptionQuestionFive" Text="   1.5 Тесты" FontSize="12" MouseEnter="DescriptTitleFive_MouseEnter" Style="{StaticResource HoverUnderlineStyle}" />
 
                             <TextBlock x:Name="MiniProjTitle" Text="2) Мини проеты, для отработки навыков:" FontSize="13" FontWeight="Bold" MouseEnter="MiniProjTitle_MouseEnter" Style="{StaticResource HoverUnderlineStyle}" />

@@ -69,6 +69,17 @@ namespace ForExperiments.ViewModels
 
         private bool CanOpenMiddleQuestionsWindowCommandExecute(object parameter) => true;
 
+        // 5 OpenSeniorQuestionsWindowCommand
+        public ICommand OpenSeniorQuestionsWindowCommand { get; }
+
+        private void OnOpenSeniorQuestionsWindowCommand(object p)
+        {
+            SeniorQuestions sq = new();
+            sq.Show();
+        }
+
+        private bool CanOpenSeniorQuestionsWindowCommandExecute(object parameter) => true;
+
         #endregion OpenGeneralWindowCommand
 
         public AppListWindowViewModel()
@@ -79,6 +90,7 @@ namespace ForExperiments.ViewModels
             OpenGeneralWindowCommand = new LamdaCommand(OnOpenGeneralWindowCommand, CanOpenGeneralWindowCommandExecute);
             OpenJuniorQuestionsWindowCommand = new LamdaCommand(OnOpenJuniorQuestionsWindowCommand, CanOpenJuniorQuestionsWindowCommandExecute);
             OpenMiddleQuestionsWindowCommand = new LamdaCommand(OnOpenMiddleQuestionsWindowCommand, CanOpenMiddleQuestionsWindowCommandExecute);
+            OpenSeniorQuestionsWindowCommand = new LamdaCommand(OnOpenSeniorQuestionsWindowCommand, CanOpenSeniorQuestionsWindowCommandExecute);
 
             #endregion Commands
         }
