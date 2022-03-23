@@ -97,11 +97,13 @@ namespace ForExperiments.ViewModels
         #region OpenTestingWindowCommand
 
         public ICommand OpenTestingWindowCommand { get; }
+
         private void OnOpenTestingWindowCommand(object parameter)
         {
             Testing testing = new();
             testing.Show();
         }
+
         private bool CanOpenTestingWindowCommandExecute(object parameter) => true;
 
         #endregion OpenTestingWindowCommand

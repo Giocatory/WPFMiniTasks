@@ -16,6 +16,7 @@ namespace ForExperiments.Infrastructure.Commands
 
         public override bool CanExecute(object parameter) => _CanExecute?.Invoke(parameter) ?? true;
 
-        public override void Execute(object parameter) { _Execute?.Invoke(parameter); }
+        public override void Execute(object parameter)
+        { _Execute?.Invoke(parameter); }
     }
 }

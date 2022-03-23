@@ -16,7 +16,6 @@ namespace ForExperiments
         {
             InitializeComponent();
             this.Background = new ImageBrush(new BitmapImage(new Uri(BaseUriHelper.GetBaseUri(this), @$"{Environment.CurrentDirectory}\img\welcome.jpg")));
-            GuestLogin.IsChecked = true;
         }
 
         #region main buttons
